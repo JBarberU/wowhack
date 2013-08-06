@@ -25,6 +25,10 @@
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
 		A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */; };
 		A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */; };
+		C421730B17B1589500346BED /* start_i4.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730917B1589500346BED /* start_i4.png */; };
+		C421730C17B1589500346BED /* start_i5.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730A17B1589500346BED /* start_i5.png */; };
+		C421730F17B158A900346BED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730E17B158A900346BED /* Default@2x.png */; };
+		C421731117B158AB00346BED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731017B158AB00346BED /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,10 @@
 		A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableViewController.m; sourceTree = "<group>"; };
 		A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackatuneAppDelegate.h; sourceTree = "<group>"; };
 		A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackatuneAppDelegate.m; sourceTree = "<group>"; };
+		C421730917B1589500346BED /* start_i4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_i4.png; sourceTree = "<group>"; };
+		C421730A17B1589500346BED /* start_i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_i5.png; sourceTree = "<group>"; };
+		C421730E17B158A900346BED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		C421731017B158AB00346BED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,8 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				C421731017B158AB00346BED /* Default-568h@2x.png */,
+				C421730E17B158A900346BED /* Default@2x.png */,
 				500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */,
 				A7AAD84917B11FB9007C22E0 /* Hackatune */,
 				50AF49AB1439CB6D00E4A5EF /* Frameworks */,
@@ -155,6 +165,7 @@
 				A7AAD85517B11FB9007C22E0 /* main.m */,
 				A7AAD85617B11FB9007C22E0 /* RotatableViewController.h */,
 				A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */,
+				C421730817B1589500346BED /* graphics */,
 				A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */,
 				A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */,
 			);
@@ -175,6 +186,15 @@
 				A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */,
 			);
 			path = iPhone;
+			sourceTree = "<group>";
+		};
+		C421730817B1589500346BED /* graphics */ = {
+			isa = PBXGroup;
+			children = (
+				C421730917B1589500346BED /* start_i4.png */,
+				C421730A17B1589500346BED /* start_i5.png */,
+			);
+			path = graphics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +276,10 @@
 				A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */,
 				A7AAD85D17B11FB9007C22E0 /* MainWindow_iPad.xib in Resources */,
 				A7AAD85E17B11FB9007C22E0 /* MainWindow_iPhone.xib in Resources */,
+				C421730B17B1589500346BED /* start_i4.png in Resources */,
+				C421730C17B1589500346BED /* start_i5.png in Resources */,
+				C421730F17B158A900346BED /* Default@2x.png in Resources */,
+				C421731117B158AB00346BED /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +393,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Hackatune;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,6 +413,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Hackatune;
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
 				WRAPPER_EXTENSION = app;
 			};
