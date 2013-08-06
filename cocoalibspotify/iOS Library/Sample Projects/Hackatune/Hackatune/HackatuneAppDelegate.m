@@ -50,6 +50,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.TEST_TRACKS = [NSArray arrayWithObjects:
+                        @"spotify:track:56i6AqFLJn9uK8vi6vA6jt",
+                        @"spotify:track:69oY6jJAwtIOAbnXGCpDdt",
                         @"spotify:track:31k8NDIb4YRCjlLuuL3Lla",
                         @"spotify:track:2cH5U1Diooe8i1zT5uyKK4",
                         @"spotify:track:6qLL74HEqG7CQXDGCm2ovb",
@@ -64,7 +66,7 @@
     
 	NSError *error = nil;
 	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
-											   userAgent:@"com.spotify.SimplePlayer-iOS"
+											   userAgent:@"se.hackatune-iOS"
 										   loadingPolicy:SPAsyncLoadingManual
 												   error:&error];
 	if (error != nil) {
@@ -74,6 +76,8 @@
     
 	self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
 	[[SPSession sharedSession] setDelegate:self];
+    
+    [[SPSession sharedSession] setPlaybackDelegate:self];
     
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
@@ -101,7 +105,7 @@
 		self.trackArtist.text = [[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","];
 	} else if ([keyPath isEqualToString:@"currentTrack.album.cover.image"]) {
 		self.coverView.image = self.currentTrack.album.cover.image;
-	} else {
+    } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
@@ -159,7 +163,7 @@
 
 - (void)startPlayback
 {
-
+    
 	// Invoked by clicking the "Play" button in the UI.
     NSURL *trackURL = [NSURL URLWithString:self.currentTrackURI];
     [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
@@ -194,7 +198,7 @@
         self.TEST_CURRENT_INDEX = 0;
     
     self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
-
+    
     [self startPlayback];
 }
 
@@ -237,6 +241,11 @@
 										  cancelButtonTitle:@"OK"
 										  otherButtonTitles:nil];
 	[alert show];
+}
+
+-(void)sessionDidEndPlayback:(id <SPSessionPlaybackProvider>)aSession
+{
+    [self nextTrack:nil];
 }
 
 
