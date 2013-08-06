@@ -36,6 +36,8 @@
 		C4388B4D17B18834002854BA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4C17B18834002854BA /* Default-568h@2x.png */; };
 		C4388B4F17B18837002854BA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4E17B18837002854BA /* Default@2x.png */; };
 		C4388B5117B18BAA002854BA /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5017B18BAA002854BA /* pausebutton.png */; };
+		C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */; };
+		C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */; };
 		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 		C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C49602D117B163DF0051969E /* SPLoginResources.bundle */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		C4388B4C17B18834002854BA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C4388B4E17B18837002854BA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C4388B5017B18BAA002854BA /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
+		C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeCapsAlts-Demi.ttf"; sourceTree = "<group>"; };
+		C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeCapsAlts-Medium.ttf"; sourceTree = "<group>"; };
 		C48B47A917B15CFD0071D27F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C49602D117B163DF0051969E /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SPLoginResources.bundle; path = ../../SPLoginResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -211,6 +215,8 @@
 		C421730817B1589500346BED /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */,
+				C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */,
 				C4388B5017B18BAA002854BA /* pausebutton.png */,
 				C4388B4417B18222002854BA /* plusbutton.png */,
 				C4388B4517B18222002854BA /* nextbutton.png */,
@@ -316,6 +322,8 @@
 				C4388B4D17B18834002854BA /* Default-568h@2x.png in Resources */,
 				C4388B4F17B18837002854BA /* Default@2x.png in Resources */,
 				C4388B5117B18BAA002854BA /* pausebutton.png in Resources */,
+				C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */,
+				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

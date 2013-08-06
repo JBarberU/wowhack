@@ -93,6 +93,13 @@
     self.jsonData = [[NSMutableData alloc] init];
     self.jsonHTTPConnection = [[NSURLConnection alloc] initWithRequest:jsonRequest delegate:self startImmediately:YES];
     
+    //Load Fonts
+    _mediumFont = [UIFont fontWithName:@"AvantGardeCapsAltsMedium" size:18];
+    _boldFont  = [UIFont fontWithName:@"AvantGardeCapsAltsDemi" size:30];
+    [_trackArtist setFont:_mediumFont];
+    [_trackTitle setFont:_boldFont];
+    
+
     
 	// Override point for customization after application launch.
 	[self.window makeKeyAndVisible];
@@ -132,9 +139,9 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"currentTrack.name"]) {
-        self.trackTitle.text = self.currentTrack.name;
+        self.trackTitle.text = [self.currentTrack.name uppercaseString];
 	} else if ([keyPath isEqualToString:@"currentTrack.artists"]) {
-		self.trackArtist.text = [[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","];
+		self.trackArtist.text = [[[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","] uppercaseString];
 	} else if ([keyPath isEqualToString:@"currentTrack.album.cover.image"]) {
 		self.coverView.image = self.currentTrack.album.cover.image;
     } else {

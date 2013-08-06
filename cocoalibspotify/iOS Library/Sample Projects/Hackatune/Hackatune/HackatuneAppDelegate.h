@@ -66,6 +66,9 @@
 @property (nonatomic, strong) NSURLConnection *jsonHTTPConnection;
 @property (nonatomic, strong) NSMutableData *jsonData;
 @property (nonatomic) int TEST_CURRENT_INDEX;
+@property (nonatomic, strong) UIFont *mediumFont;
+@property (nonatomic, strong) UIFont *boldFont;
+
 
 - (IBAction)playTrack:(id)sender;
 - (IBAction)nextTrack:(id)sender;
