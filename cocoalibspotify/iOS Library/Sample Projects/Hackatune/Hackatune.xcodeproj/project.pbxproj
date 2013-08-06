@@ -29,6 +29,8 @@
 		C421730C17B1589500346BED /* start_i5.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730A17B1589500346BED /* start_i5.png */; };
 		C421730F17B158A900346BED /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730E17B158A900346BED /* Default@2x.png */; };
 		C421731117B158AB00346BED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731017B158AB00346BED /* Default-568h@2x.png */; };
+		C421731417B159CA00346BED /* lower.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731217B159CA00346BED /* lower.png */; };
+		C421731517B159CA00346BED /* upper.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731317B159CA00346BED /* upper.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		C421730A17B1589500346BED /* start_i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_i5.png; sourceTree = "<group>"; };
 		C421730E17B158A900346BED /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		C421731017B158AB00346BED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		C421731217B159CA00346BED /* lower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lower.png; sourceTree = "<group>"; };
+		C421731317B159CA00346BED /* upper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upper.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +195,8 @@
 		C421730817B1589500346BED /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C421731217B159CA00346BED /* lower.png */,
+				C421731317B159CA00346BED /* upper.png */,
 				C421730917B1589500346BED /* start_i4.png */,
 				C421730A17B1589500346BED /* start_i5.png */,
 			);
@@ -280,6 +286,8 @@
 				C421730C17B1589500346BED /* start_i5.png in Resources */,
 				C421730F17B158A900346BED /* Default@2x.png in Resources */,
 				C421731117B158AB00346BED /* Default-568h@2x.png in Resources */,
+				C421731417B159CA00346BED /* lower.png in Resources */,
+				C421731517B159CA00346BED /* upper.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
