@@ -33,7 +33,7 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
 
-@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, NSURLConnectionDataDelegate> {
+@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate> {
 	UIViewController *_mainViewController;
 	UITextField *_trackURIField;
 	UILabel *_trackTitle;
@@ -46,6 +46,10 @@
     
     NSURLConnection *_jsonHTTPConnection;
     NSMutableData *_jsonData;
+    
+    UIImage *_playButtonImage;
+    UIImage *_pauseButtonImage;
+    UIButton *_playPauseButton;
     
     NSArray *_TEST_TRACKS;
     int _TEST_CURRENT_INDEX;
@@ -68,11 +72,13 @@
 @property (nonatomic) int TEST_CURRENT_INDEX;
 @property (nonatomic, strong) UIFont *mediumFont;
 @property (nonatomic, strong) UIFont *boldFont;
-
+@property (nonatomic, strong) UIImage *playButtonImage;
+@property (nonatomic, strong) UIImage *pauseButtonImage;
+@property (nonatomic, strong) IBOutlet UIButton *playPauseButton;
 
 - (IBAction)playTrack:(id)sender;
 - (IBAction)nextTrack:(id)sender;
 - (void)startPlayback;
-
+- (void)checkPlayState;
 
 @end

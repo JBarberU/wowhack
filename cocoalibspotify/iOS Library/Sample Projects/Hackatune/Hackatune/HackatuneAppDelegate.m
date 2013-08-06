@@ -48,47 +48,15 @@
 @synthesize currentTrackURI = _currentTrackURI;
 @synthesize jsonHTTPConnection = _jsonHTTPConnection;
 @synthesize jsonData = _jsonData;
-
-
-#pragma mark -
-#pragma mark SPSessionDelegate Methods
-
--(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.jsonData appendData:data];
-}
-
--(void) connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSError* error;
-    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:self.jsonData options:kNilOptions error:&error];
-    
-    if (error != nil) {
-        NSLog(@"Unable to load JSON");
-        return;
-    }
-    
-    if ([json count] <= 0) {
-        self.TEST_CURRENT_INDEX = -1;
-        self.TEST_TRACKS = nil;
-        return;
-    }
-    
-    NSMutableArray *newTracks = [[NSMutableArray alloc] initWithCapacity:[json count]];
-    for (NSDictionary *inner in [json objectEnumerator]) {
-        id obj = [inner objectForKey:@"spotify_id"];
-        if (obj)
-            [newTracks addObject:[NSString stringWithFormat:@"spotify:track:%@",obj]];
-    }
-    self.TEST_TRACKS = [NSArray arrayWithArray:newTracks];
-    
-    self.TEST_CURRENT_INDEX = 0;
-    self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
-}
-
+@synthesize playButtonImage = _playButtonImage;
+@synthesize pauseButtonImage = _pauseButtonImage;
+@synthesize playPauseButton = _playPauseButton;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.playButtonImage = [UIImage imageNamed:@"playbutton.png"];
+    self.pauseButtonImage = [UIImage imageNamed:@"pausebutton.png"];
+    
     NSURLRequest *jsonRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://hackatune.gotconsulting.se/wow.json"]];
     self.jsonData = [[NSMutableData alloc] init];
     self.jsonHTTPConnection = [[NSURLConnection alloc] initWithRequest:jsonRequest delegate:self startImmediately:YES];
@@ -189,6 +157,15 @@
 	[[SPSession sharedSession] logout:^{}];
 }
 
+
+- (void)dealloc {
+	
+	[self removeObserver:self forKeyPath:@"currentTrack.name"];
+	[self removeObserver:self forKeyPath:@"currentTrack.artists"];
+	[self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
+	
+}
+
 #pragma mark -
 
 - (IBAction)playTrack:(id)sender
@@ -197,6 +174,16 @@
         [self startPlayback];
     else
         self.playbackManager.isPlaying = !self.playbackManager.isPlaying;
+
+    [self checkPlayState];
+}
+
+- (void)checkPlayState
+{
+    if (self.playbackManager.isPlaying)
+        [self.playPauseButton setImage:self.pauseButtonImage forState:nil];
+    else
+        [self.playPauseButton setImage:self.playButtonImage forState:nil];
 }
 
 - (void)startPlayback
@@ -219,6 +206,7 @@
                         [alert show];
                     } else {
                         self.currentTrack = track;
+                        self.playbackManager.delegate = self;
                     }
                     
                 }];
@@ -243,6 +231,44 @@
     
     [self startPlayback];
 }
+
+
+#pragma mark -
+#pragma mark NSURLConnectionDataDelegate Methods
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.jsonData appendData:data];
+}
+
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:self.jsonData options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Unable to load JSON");
+        return;
+    }
+    
+    if ([json count] <= 0) {
+        self.TEST_CURRENT_INDEX = -1;
+        self.TEST_TRACKS = nil;
+        return;
+    }
+    
+    NSMutableArray *newTracks = [[NSMutableArray alloc] initWithCapacity:[json count]];
+    for (NSDictionary *inner in [json objectEnumerator]) {
+        id obj = [inner objectForKey:@"spotify_id"];
+        if (obj)
+            [newTracks addObject:[NSString stringWithFormat:@"spotify:track:%@",obj]];
+    }
+    self.TEST_TRACKS = [NSArray arrayWithArray:newTracks];
+    
+    self.TEST_CURRENT_INDEX = 0;
+    self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
+}
+
 
 #pragma mark -
 #pragma mark SPSessionDelegate Methods
@@ -295,18 +321,16 @@
 	[alert show];
 }
 
--(void)sessionDidEndPlayback:(id <SPSessionPlaybackProvider>)aSession
+- (void)sessionDidEndPlayback:(id <SPSessionPlaybackProvider>)aSession
 {
     [self nextTrack:nil];
 }
 
-
-- (void)dealloc {
-	
-	[self removeObserver:self forKeyPath:@"currentTrack.name"];
-	[self removeObserver:self forKeyPath:@"currentTrack.artists"];
-	[self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
-	
+#pragma -
+#pragma SPPlaybackManagerDelegate
+- (void)playbackManagerWillStartPlayingAudio:(SPPlaybackManager *)aPlaybackManager
+{
+    [self checkPlayState];
 }
 
 @end
