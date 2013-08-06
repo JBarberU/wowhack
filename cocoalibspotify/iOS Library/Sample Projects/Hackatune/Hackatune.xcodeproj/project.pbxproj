@@ -31,7 +31,12 @@
 		C421731117B158AB00346BED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731017B158AB00346BED /* Default-568h@2x.png */; };
 		C421731417B159CA00346BED /* lower.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731217B159CA00346BED /* lower.png */; };
 		C421731517B159CA00346BED /* upper.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731317B159CA00346BED /* upper.png */; };
+		C4388B4317B1808B002854BA /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4217B1808B002854BA /* background.png */; };
+		C4388B4817B18222002854BA /* plusbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4417B18222002854BA /* plusbutton.png */; };
+		C4388B4917B18222002854BA /* nextbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4517B18222002854BA /* nextbutton.png */; };
+		C4388B4A17B18222002854BA /* playbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4617B18222002854BA /* playbutton.png */; };
 		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
+		C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C49602D117B163DF0051969E /* SPLoginResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +93,12 @@
 		C421731017B158AB00346BED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C421731217B159CA00346BED /* lower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lower.png; sourceTree = "<group>"; };
 		C421731317B159CA00346BED /* upper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upper.png; sourceTree = "<group>"; };
+		C4388B4217B1808B002854BA /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		C4388B4417B18222002854BA /* plusbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plusbutton.png; sourceTree = "<group>"; };
+		C4388B4517B18222002854BA /* nextbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextbutton.png; sourceTree = "<group>"; };
+		C4388B4617B18222002854BA /* playbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playbutton.png; sourceTree = "<group>"; };
 		C48B47A917B15CFD0071D27F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		C49602D117B163DF0051969E /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SPLoginResources.bundle; path = ../../SPLoginResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +135,7 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				C49602D117B163DF0051969E /* SPLoginResources.bundle */,
 				C48B47A917B15CFD0071D27F /* icon.png */,
 				C421731017B158AB00346BED /* Default-568h@2x.png */,
 				C421730E17B158A900346BED /* Default@2x.png */,
@@ -198,6 +209,10 @@
 		C421730817B1589500346BED /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C4388B4417B18222002854BA /* plusbutton.png */,
+				C4388B4517B18222002854BA /* nextbutton.png */,
+				C4388B4617B18222002854BA /* playbutton.png */,
+				C4388B4217B1808B002854BA /* background.png */,
 				C421731217B159CA00346BED /* lower.png */,
 				C421731317B159CA00346BED /* upper.png */,
 				C421730917B1589500346BED /* start_i4.png */,
@@ -292,6 +307,11 @@
 				C421731417B159CA00346BED /* lower.png in Resources */,
 				C421731517B159CA00346BED /* upper.png in Resources */,
 				C48B47AA17B15CFD0071D27F /* icon.png in Resources */,
+				C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */,
+				C4388B4317B1808B002854BA /* background.png in Resources */,
+				C4388B4817B18222002854BA /* plusbutton.png in Resources */,
+				C4388B4917B18222002854BA /* nextbutton.png in Resources */,
+				C4388B4A17B18222002854BA /* playbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
