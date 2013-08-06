@@ -31,6 +31,7 @@
 		C421731117B158AB00346BED /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731017B158AB00346BED /* Default-568h@2x.png */; };
 		C421731417B159CA00346BED /* lower.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731217B159CA00346BED /* lower.png */; };
 		C421731517B159CA00346BED /* upper.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731317B159CA00346BED /* upper.png */; };
+		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		C421731017B158AB00346BED /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C421731217B159CA00346BED /* lower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lower.png; sourceTree = "<group>"; };
 		C421731317B159CA00346BED /* upper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = upper.png; sourceTree = "<group>"; };
+		C48B47A917B15CFD0071D27F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				C48B47A917B15CFD0071D27F /* icon.png */,
 				C421731017B158AB00346BED /* Default-568h@2x.png */,
 				C421730E17B158A900346BED /* Default@2x.png */,
 				500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */,
@@ -288,6 +291,7 @@
 				C421731117B158AB00346BED /* Default-568h@2x.png in Resources */,
 				C421731417B159CA00346BED /* lower.png in Resources */,
 				C421731517B159CA00346BED /* upper.png in Resources */,
+				C48B47AA17B15CFD0071D27F /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
