@@ -41,7 +41,6 @@
 @synthesize trackTitle = _trackTitle;
 @synthesize trackArtist = _trackArtist;
 @synthesize coverView = _coverView;
-@synthesize positionSlider = _positionSlider;
 @synthesize playbackManager = _playbackManager;
 @synthesize currentTrack = _currentTrack;
 
@@ -65,9 +64,7 @@
 
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"currentTrack.duration" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
-	[self addObserver:self forKeyPath:@"playbackManager.trackPosition" options:0 context:nil];
 	
 	[self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
 	
@@ -91,14 +88,7 @@
 		self.trackArtist.text = [[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","];
 	} else if ([keyPath isEqualToString:@"currentTrack.album.cover.image"]) {
 		self.coverView.image = self.currentTrack.album.cover.image;
-	} else if ([keyPath isEqualToString:@"currentTrack.duration"]) {
-		self.positionSlider.maximumValue = self.currentTrack.duration;
-	} else if ([keyPath isEqualToString:@"playbackManager.trackPosition"]) {
-		// Only update the slider if the user isn't currently dragging it.
-		if (!self.positionSlider.highlighted)
-			self.positionSlider.value = self.playbackManager.trackPosition;
-
-    } else {
+	} else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
@@ -187,14 +177,6 @@
 	[alert show];
 }
 
-- (IBAction)setTrackPosition:(id)sender {
-	[self.playbackManager seekToTrackPosition:self.positionSlider.value];
-}
-
-- (IBAction)setVolume:(id)sender {
-	self.playbackManager.volume = [(UISlider *)sender value];
-}
-
 #pragma mark -
 #pragma mark SPSessionDelegate Methods
 
@@ -242,7 +224,6 @@
 	[self removeObserver:self forKeyPath:@"currentTrack.name"];
 	[self removeObserver:self forKeyPath:@"currentTrack.artists"];
 	[self removeObserver:self forKeyPath:@"currentTrack.album.cover.image"];
-	[self removeObserver:self forKeyPath:@"playbackManager.trackPosition"];
 	
 }
 

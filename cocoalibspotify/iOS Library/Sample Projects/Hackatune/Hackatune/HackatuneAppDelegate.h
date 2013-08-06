@@ -39,7 +39,6 @@
 	UILabel *_trackTitle;
 	UILabel *_trackArtist;
 	UIImageView *_coverView;
-	UISlider *_positionSlider;
 	SPPlaybackManager *_playbackManager;
 	SPTrack *_currentTrack;
 }
@@ -47,18 +46,14 @@
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UIViewController *mainViewController;
-
 @property (nonatomic, strong) IBOutlet UITextField *trackURIField;
 @property (nonatomic, strong) IBOutlet UILabel *trackTitle;
 @property (nonatomic, strong) IBOutlet UILabel *trackArtist;
 @property (nonatomic, strong) IBOutlet UIImageView *coverView;
-@property (nonatomic, strong) IBOutlet UISlider *positionSlider;
 
 @property (nonatomic, strong) SPTrack *currentTrack;
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
 
 - (IBAction)playTrack:(id)sender;
-- (IBAction)setTrackPosition:(id)sender;
-- (IBAction)setVolume:(id)sender;
 
 @end
