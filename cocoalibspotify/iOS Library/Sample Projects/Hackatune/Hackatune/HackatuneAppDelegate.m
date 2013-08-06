@@ -46,20 +46,53 @@
 @synthesize TEST_TRACKS = _TEST_TRACKS;
 @synthesize TEST_CURRENT_INDEX = _TEST_CURRENT_INDEX;
 @synthesize currentTrackURI = _currentTrackURI;
+@synthesize jsonHTTPConnection = _jsonHTTPConnection;
+@synthesize jsonData = _jsonData;
+
+
+#pragma mark -
+#pragma mark SPSessionDelegate Methods
+
+-(void) connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.jsonData appendData:data];
+}
+
+-(void) connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError* error;
+    NSDictionary* json = [NSJSONSerialization JSONObjectWithData:self.jsonData options:kNilOptions error:&error];
+    
+    if (error != nil) {
+        NSLog(@"Unable to load JSON");
+        return;
+    }
+    
+    if ([json count] <= 0) {
+        self.TEST_CURRENT_INDEX = -1;
+        self.TEST_TRACKS = nil;
+        return;
+    }
+    
+    NSMutableArray *newTracks = [[NSMutableArray alloc] initWithCapacity:[json count]];
+    for (NSDictionary *inner in [json objectEnumerator]) {
+        id obj = [inner objectForKey:@"spotify_id"];
+        if (obj)
+            [newTracks addObject:[NSString stringWithFormat:@"spotify:track:%@",obj]];
+    }
+    self.TEST_TRACKS = [NSArray arrayWithArray:newTracks];
+    
+    self.TEST_CURRENT_INDEX = 0;
+    self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.TEST_TRACKS = [NSArray arrayWithObjects:
-                        @"spotify:track:56i6AqFLJn9uK8vi6vA6jt",
-                        @"spotify:track:69oY6jJAwtIOAbnXGCpDdt",
-                        @"spotify:track:31k8NDIb4YRCjlLuuL3Lla",
-                        @"spotify:track:2cH5U1Diooe8i1zT5uyKK4",
-                        @"spotify:track:6qLL74HEqG7CQXDGCm2ovb",
-                        @"spotify:track:6vwCse8ApAZoesv5U5MJPE",
-                        @"spotify:track:6vyStw2mr0Eq3izsBjJj4R",
-                        nil];
-    self.TEST_CURRENT_INDEX = -1;
-    [self nextTrack:nil];
+    NSURLRequest *jsonRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://hackatune.gotconsulting.se/wow.json"]];
+    self.jsonData = [[NSMutableData alloc] init];
+    self.jsonHTTPConnection = [[NSURLConnection alloc] initWithRequest:jsonRequest delegate:self startImmediately:YES];
+    
     
 	// Override point for customization after application launch.
 	[self.window makeKeyAndVisible];
@@ -95,7 +128,6 @@
 	
 	[self.mainViewController presentModalViewController:controller
 											   animated:NO];
-    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -163,8 +195,7 @@
 
 - (void)startPlayback
 {
-    
-	// Invoked by clicking the "Play" button in the UI.
+    // Invoked by clicking the "Play" button in the UI.
     NSURL *trackURL = [NSURL URLWithString:self.currentTrackURI];
     [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
         
@@ -172,8 +203,8 @@
             
             [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
                 [self.playbackManager playTrack:track callback:^(NSError *error) {
-                    
                     if (error) {
+                        NSLog(@"Error: %@",error);
                         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
                                                                         message:[error localizedDescription]
                                                                        delegate:nil
@@ -192,12 +223,17 @@
 
 - (IBAction)nextTrack:(id)sender
 {
+    if (!self.TEST_TRACKS && [self.TEST_TRACKS count] <= 0)
+        return;
+    
     ++self.TEST_CURRENT_INDEX;
     
     if (self.TEST_CURRENT_INDEX >= [self.TEST_TRACKS count] || self.TEST_CURRENT_INDEX < 0)
         self.TEST_CURRENT_INDEX = 0;
     
     self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
+    
+    NSLog(@"New Track: %@",self.currentTrackURI);
     
     [self startPlayback];
 }

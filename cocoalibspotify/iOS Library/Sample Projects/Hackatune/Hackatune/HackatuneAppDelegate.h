@@ -33,7 +33,7 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
 
-@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate> {
+@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, NSURLConnectionDataDelegate> {
 	UIViewController *_mainViewController;
 	UITextField *_trackURIField;
 	UILabel *_trackTitle;
@@ -43,6 +43,9 @@
 	SPTrack *_currentTrack;
     
     NSString *_currentTrackURI;
+    
+    NSURLConnection *_jsonHTTPConnection;
+    NSMutableData *_jsonData;
     
     NSArray *_TEST_TRACKS;
     int _TEST_CURRENT_INDEX;
@@ -60,6 +63,8 @@
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
 @property (nonatomic, strong) NSString *currentTrackURI;
 @property (nonatomic, strong) NSArray *TEST_TRACKS;
+@property (nonatomic, strong) NSURLConnection *jsonHTTPConnection;
+@property (nonatomic, strong) NSMutableData *jsonData;
 @property (nonatomic) int TEST_CURRENT_INDEX;
 
 - (IBAction)playTrack:(id)sender;
