@@ -149,8 +149,17 @@
 
 #pragma mark -
 
-- (IBAction)playTrack:(id)sender {
-	
+- (IBAction)playTrack:(id)sender
+{
+    if (self.currentTrack == nil)
+        [self startPlayback];
+    else
+        self.playbackManager.isPlaying = !self.playbackManager.isPlaying;
+}
+
+- (void)startPlayback
+{
+
 	// Invoked by clicking the "Play" button in the UI.
     NSURL *trackURL = [NSURL URLWithString:self.currentTrackURI];
     [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
@@ -175,16 +184,6 @@
             }];
         }
     }];
-    
-    return;
-	
-	
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
-													message:@"Please enter a track URL"
-												   delegate:nil
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-	[alert show];
 }
 
 - (IBAction)nextTrack:(id)sender
@@ -196,7 +195,7 @@
     
     self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
 
-    [self playTrack:nil];
+    [self startPlayback];
 }
 
 #pragma mark -

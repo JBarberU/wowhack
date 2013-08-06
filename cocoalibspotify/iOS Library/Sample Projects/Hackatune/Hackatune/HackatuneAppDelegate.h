@@ -64,5 +64,7 @@
 
 - (IBAction)playTrack:(id)sender;
 - (IBAction)nextTrack:(id)sender;
+- (void)startPlayback;
+
 
 @end
