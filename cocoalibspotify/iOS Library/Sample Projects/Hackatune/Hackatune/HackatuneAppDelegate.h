@@ -41,6 +41,11 @@
 	UIImageView *_coverView;
 	SPPlaybackManager *_playbackManager;
 	SPTrack *_currentTrack;
+    
+    NSString *_currentTrackURI;
+    
+    NSArray *_TEST_TRACKS;
+    int _TEST_CURRENT_INDEX;
 }
 
 
@@ -53,7 +58,11 @@
 
 @property (nonatomic, strong) SPTrack *currentTrack;
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
+@property (nonatomic, strong) NSString *currentTrackURI;
+@property (nonatomic, strong) NSArray *TEST_TRACKS;
+@property (nonatomic) int TEST_CURRENT_INDEX;
 
 - (IBAction)playTrack:(id)sender;
+- (IBAction)nextTrack:(id)sender;
 
 @end

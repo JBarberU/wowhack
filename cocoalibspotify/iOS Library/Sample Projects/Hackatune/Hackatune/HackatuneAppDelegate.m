@@ -14,16 +14,16 @@
  * Redistributions in binary form must reproduce the above copyright
  notice, this list of conditions and the following disclaimer in the
  documentation and/or other materials provided with the distribution.
- * Neither the name of Spotify AB nor the names of its contributors may 
- be used to endorse or promote products derived from this software 
+ * Neither the name of Spotify AB nor the names of its contributors may
+ be used to endorse or promote products derived from this software
  without specific prior written permission.
  
  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
  DISCLAIMED. IN NO EVENT SHALL SPOTIFY AB BE LIABLE FOR ANY DIRECT, INDIRECT,
- INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT 
- LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+ INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,
  OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
  LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
@@ -43,12 +43,25 @@
 @synthesize coverView = _coverView;
 @synthesize playbackManager = _playbackManager;
 @synthesize currentTrack = _currentTrack;
+@synthesize TEST_TRACKS = _TEST_TRACKS;
+@synthesize TEST_CURRENT_INDEX = _TEST_CURRENT_INDEX;
+@synthesize currentTrackURI = _currentTrackURI;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.TEST_TRACKS = [NSArray arrayWithObjects:
+                        @"spotify:track:31k8NDIb4YRCjlLuuL3Lla",
+                        @"spotify:track:2cH5U1Diooe8i1zT5uyKK4",
+                        @"spotify:track:6qLL74HEqG7CQXDGCm2ovb",
+                        @"spotify:track:6vwCse8ApAZoesv5U5MJPE",
+                        @"spotify:track:6vyStw2mr0Eq3izsBjJj4R",
+                        nil];
+    self.TEST_CURRENT_INDEX = -1;
+    [self nextTrack:nil];
+    
 	// Override point for customization after application launch.
 	[self.window makeKeyAndVisible];
-
+    
 	NSError *error = nil;
 	[SPSession initializeSharedSessionWithApplicationKey:[NSData dataWithBytes:&g_appkey length:g_appkey_size]
 											   userAgent:@"com.spotify.SimplePlayer-iOS"
@@ -58,10 +71,10 @@
 		NSLog(@"CocoaLibSpotify init failed: %@", error);
 		abort();
 	}
-
+    
 	self.playbackManager = [[SPPlaybackManager alloc] initWithPlaybackSession:[SPSession sharedSession]];
 	[[SPSession sharedSession] setDelegate:self];
-
+    
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
@@ -72,13 +85,13 @@
 }
 
 -(void)showLogin {
-
+    
 	SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = NO;
 	
 	[self.mainViewController presentModalViewController:controller
 											   animated:NO];
-
+    
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -104,7 +117,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
 	/*
-	 Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+	 Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
 	 If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 	 */
 }
@@ -139,35 +152,32 @@
 - (IBAction)playTrack:(id)sender {
 	
 	// Invoked by clicking the "Play" button in the UI.
+    NSURL *trackURL = [NSURL URLWithString:self.currentTrackURI];
+    [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
+        
+        if (track != nil) {
+            
+            [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
+                [self.playbackManager playTrack:track callback:^(NSError *error) {
+                    
+                    if (error) {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
+                                                                        message:[error localizedDescription]
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                        [alert show];
+                    } else {
+                        self.currentTrack = track;
+                    }
+                    
+                }];
+            }];
+        }
+    }];
+    
+    return;
 	
-	if (self.trackURIField.text.length > 0) {
-		
-		NSURL *trackURL = [NSURL URLWithString:self.trackURIField.text];
-		[[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
-			
-			if (track != nil) {
-				
-				[SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
-					[self.playbackManager playTrack:track callback:^(NSError *error) {
-						
-						if (error) {
-							UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
-																			message:[error localizedDescription]
-																		   delegate:nil
-																  cancelButtonTitle:@"OK"
-																  otherButtonTitles:nil];
-							[alert show];
-						} else {
-							self.currentTrack = track;
-						}
-						
-					}];
-				}];
-			}
-		}];
-		
-		return;
-	}
 	
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
 													message:@"Please enter a track URL"
@@ -175,6 +185,18 @@
 										  cancelButtonTitle:@"OK"
 										  otherButtonTitles:nil];
 	[alert show];
+}
+
+- (IBAction)nextTrack:(id)sender
+{
+    ++self.TEST_CURRENT_INDEX;
+    
+    if (self.TEST_CURRENT_INDEX >= [self.TEST_TRACKS count] || self.TEST_CURRENT_INDEX < 0)
+        self.TEST_CURRENT_INDEX = 0;
+    
+    self.currentTrackURI = [self.TEST_TRACKS objectAtIndex:self.TEST_CURRENT_INDEX];
+
+    [self playTrack:nil];
 }
 
 #pragma mark -
