@@ -122,15 +122,14 @@
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
-	
-	[self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
-	
+    
+	[[SPSession sharedSession] attemptLoginWithUserName:[[NSUserDefaults standardUserDefaults] valueForKey:@"spotifyUser"] existingCredential:[[NSUserDefaults standardUserDefaults] valueForKey:@"spotifyCredential"]];
     return YES;
 }
 
--(void)showLogin {
-    
-	SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
+-(void)showLogin
+{
+    SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = NO;
 	
 	[self.mainViewController presentModalViewController:controller
@@ -256,8 +255,18 @@
 	// Invoked by SPSession after a successful login.
 }
 
+-(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
+{
+    NSLog(@"Saving credentials");
+    [[NSUserDefaults standardUserDefaults] setValue:userName forKey:@"spotifyUser"];
+    [[NSUserDefaults standardUserDefaults] setValue:credential forKey:@"spotifyCredential"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 -(void)session:(SPSession *)aSession didFailToLoginWithError:(NSError *)error; {
-	// Invoked by SPSession after a failed login.
+    // Show the login window if the stored credentials fail to login
+    if (error.code == 8)
+        [self performSelector:@selector(showLogin) withObject:nil afterDelay:0.0];
 }
 
 -(void)sessionDidLogOut:(SPSession *)aSession {
