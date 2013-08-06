@@ -1,0 +1,53 @@
+.TH "sp_offline_sync_status" 3spotify "Tue Jun 4 2013" "libspotify" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+sp_offline_sync_status \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <api\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "int \fBqueued_tracks\fP"
+.br
+.ti -1c
+.RI "int \fBdone_tracks\fP"
+.br
+.ti -1c
+.RI "int \fBcopied_tracks\fP"
+.br
+.ti -1c
+.RI "int \fBwillnotcopy_tracks\fP"
+.br
+.ti -1c
+.RI "int \fBerror_tracks\fP"
+.br
+.ti -1c
+.RI "bool \fBsyncing\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Offline sync status 
+.SH "Field Documentation"
+.PP 
+.SS "int sp_offline_sync_status::copied_tracks"
+Copied tracks/bytes is things that has been copied in current sync operation 
+.SS "int sp_offline_sync_status::done_tracks"
+Done tracks/bytes is things marked for sync that existed on device before current sync operation 
+.SS "int sp_offline_sync_status::error_tracks"
+A track is counted as error when something goes wrong while syncing the track 
+.SS "int sp_offline_sync_status::queued_tracks"
+Queued tracks/bytes is things left to sync in current sync operation 
+.SS "bool sp_offline_sync_status::syncing"
+Set if sync operation is in progress 
+.SS "int sp_offline_sync_status::willnotcopy_tracks"
+Tracks that are marked as synced but will not be copied (for various reasons) 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for libspotify from the source code\&.

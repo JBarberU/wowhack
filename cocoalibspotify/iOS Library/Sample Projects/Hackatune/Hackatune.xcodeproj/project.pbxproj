@@ -1,0 +1,420 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37E8E0A81746325C000A9747 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37E8E0A71746325C000A9747 /* Security.framework */; };
+		5002BD6C1439DE2400FEAB3C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD6B1439DE2400FEAB3C /* AudioToolbox.framework */; };
+		5002BD7D1439E8E800FEAB3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD7C1439E8E800FEAB3C /* SystemConfiguration.framework */; };
+		5002BD7F1439E8FC00FEAB3C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD7E1439E8FC00FEAB3C /* CFNetwork.framework */; };
+		5002BD811439E90400FEAB3C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD801439E90400FEAB3C /* libstdc++.dylib */; };
+		50A26BEA1439D79D00A0C876 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EC8CA1439D54E00E8A60C /* libCocoaLibSpotify.a */; };
+		50A26BEC1439D7AA00A0C876 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26BEB1439D7AA00A0C876 /* CoreAudio.framework */; };
+		50AF49AD1439CB6D00E4A5EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49AC1439CB6D00E4A5EF /* UIKit.framework */; };
+		50AF49AF1439CB6D00E4A5EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49AE1439CB6D00E4A5EF /* Foundation.framework */; };
+		50AF49B11439CB6D00E4A5EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */; };
+		50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FAA140143A0B1400FF06D7 /* AVFoundation.framework */; };
+		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
+		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
+		A7AAD85D17B11FB9007C22E0 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */; };
+		A7AAD85E17B11FB9007C22E0 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */; };
+		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
+		A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */; };
+		A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		500EC8C91439D54E00E8A60C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50AF49DC1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		500EC8CB1439D57500E8A60C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 50AF49DB1439CBFE00E4A5EF;
+			remoteInfo = CocoaLibSpotify;
+		};
+		5049C2BF157D020000482987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 50D4F52B156BCDE800E237DD;
+			remoteInfo = CocoaLSTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37E8E0A71746325C000A9747 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5002BD6B1439DE2400FEAB3C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5002BD7C1439E8E800FEAB3C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5002BD7E1439E8FC00FEAB3C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5002BD801439E90400FEAB3C /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CocoaLibSpotify iOS Library.xcodeproj"; path = "../../CocoaLibSpotify iOS Library.xcodeproj"; sourceTree = "<group>"; };
+		50A26BEB1439D7AA00A0C876 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		50AF49A81439CB6D00E4A5EF /* Hackatune.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackatune.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		50AF49AC1439CB6D00E4A5EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		50AF49AE1439CB6D00E4A5EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50FAA140143A0B1400FF06D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A7AAD84A17B11FB9007C22E0 /* appkey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = appkey.c; sourceTree = "<group>"; };
+		A7AAD84C17B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hackatune-Info.plist"; sourceTree = "<group>"; };
+		A7AAD84E17B11FB9007C22E0 /* Hackatune-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hackatune-Prefix.pch"; sourceTree = "<group>"; };
+		A7AAD85117B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
+		A7AAD85417B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
+		A7AAD85517B11FB9007C22E0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A7AAD85617B11FB9007C22E0 /* RotatableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableViewController.h; sourceTree = "<group>"; };
+		A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableViewController.m; sourceTree = "<group>"; };
+		A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackatuneAppDelegate.h; sourceTree = "<group>"; };
+		A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackatuneAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		50AF49A51439CB6D00E4A5EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37E8E0A81746325C000A9747 /* Security.framework in Frameworks */,
+				50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */,
+				5002BD811439E90400FEAB3C /* libstdc++.dylib in Frameworks */,
+				5002BD7F1439E8FC00FEAB3C /* CFNetwork.framework in Frameworks */,
+				5002BD7D1439E8E800FEAB3C /* SystemConfiguration.framework in Frameworks */,
+				5002BD6C1439DE2400FEAB3C /* AudioToolbox.framework in Frameworks */,
+				50A26BEC1439D7AA00A0C876 /* CoreAudio.framework in Frameworks */,
+				50A26BEA1439D79D00A0C876 /* libCocoaLibSpotify.a in Frameworks */,
+				50AF49AD1439CB6D00E4A5EF /* UIKit.framework in Frameworks */,
+				50AF49AF1439CB6D00E4A5EF /* Foundation.framework in Frameworks */,
+				50AF49B11439CB6D00E4A5EF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		500EC8C31439D54E00E8A60C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				500EC8CA1439D54E00E8A60C /* libCocoaLibSpotify.a */,
+				5049C2C0157D020000482987 /* CocoaLSTests.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50AF499D1439CB6D00E4A5EF = {
+			isa = PBXGroup;
+			children = (
+				500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */,
+				A7AAD84917B11FB9007C22E0 /* Hackatune */,
+				50AF49AB1439CB6D00E4A5EF /* Frameworks */,
+				50AF49A91439CB6D00E4A5EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		50AF49A91439CB6D00E4A5EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				50AF49A81439CB6D00E4A5EF /* Hackatune.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		50AF49AB1439CB6D00E4A5EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37E8E0A71746325C000A9747 /* Security.framework */,
+				50FAA140143A0B1400FF06D7 /* AVFoundation.framework */,
+				5002BD801439E90400FEAB3C /* libstdc++.dylib */,
+				5002BD7E1439E8FC00FEAB3C /* CFNetwork.framework */,
+				5002BD7C1439E8E800FEAB3C /* SystemConfiguration.framework */,
+				5002BD6B1439DE2400FEAB3C /* AudioToolbox.framework */,
+				50A26BEB1439D7AA00A0C876 /* CoreAudio.framework */,
+				50AF49AC1439CB6D00E4A5EF /* UIKit.framework */,
+				50AF49AE1439CB6D00E4A5EF /* Foundation.framework */,
+				50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7AAD84917B11FB9007C22E0 /* Hackatune */ = {
+			isa = PBXGroup;
+			children = (
+				A7AAD84A17B11FB9007C22E0 /* appkey.c */,
+				A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */,
+				A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */,
+				A7AAD84E17B11FB9007C22E0 /* Hackatune-Prefix.pch */,
+				A7AAD84F17B11FB9007C22E0 /* iPad */,
+				A7AAD85217B11FB9007C22E0 /* iPhone */,
+				A7AAD85517B11FB9007C22E0 /* main.m */,
+				A7AAD85617B11FB9007C22E0 /* RotatableViewController.h */,
+				A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */,
+				A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */,
+				A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */,
+			);
+			path = Hackatune;
+			sourceTree = "<group>";
+		};
+		A7AAD84F17B11FB9007C22E0 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */,
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		A7AAD85217B11FB9007C22E0 /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		50AF49A71439CB6D00E4A5EF /* Hackatune */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 50AF49CE1439CB6E00E4A5EF /* Build configuration list for PBXNativeTarget "Hackatune" */;
+			buildPhases = (
+				50AF49A41439CB6D00E4A5EF /* Sources */,
+				50AF49A51439CB6D00E4A5EF /* Frameworks */,
+				50AF49A61439CB6D00E4A5EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				500EC8CC1439D57500E8A60C /* PBXTargetDependency */,
+			);
+			name = Hackatune;
+			productName = "Simple Player";
+			productReference = 50AF49A81439CB6D00E4A5EF /* Hackatune.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		50AF499F1439CB6D00E4A5EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = Spotify;
+			};
+			buildConfigurationList = 50AF49A21439CB6D00E4A5EF /* Build configuration list for PBXProject "Hackatune" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 50AF499D1439CB6D00E4A5EF;
+			productRefGroup = 50AF49A91439CB6D00E4A5EF /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 500EC8C31439D54E00E8A60C /* Products */;
+					ProjectRef = 500EC8C21439D54E00E8A60C /* CocoaLibSpotify iOS Library.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				50AF49A71439CB6D00E4A5EF /* Hackatune */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		500EC8CA1439D54E00E8A60C /* libCocoaLibSpotify.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCocoaLibSpotify.a;
+			remoteRef = 500EC8C91439D54E00E8A60C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5049C2C0157D020000482987 /* CocoaLSTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CocoaLSTests.app;
+			remoteRef = 5049C2BF157D020000482987 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		50AF49A61439CB6D00E4A5EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */,
+				A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */,
+				A7AAD85D17B11FB9007C22E0 /* MainWindow_iPad.xib in Resources */,
+				A7AAD85E17B11FB9007C22E0 /* MainWindow_iPhone.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		50AF49A41439CB6D00E4A5EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7AAD85F17B11FB9007C22E0 /* main.m in Sources */,
+				A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */,
+				A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		500EC8CC1439D57500E8A60C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CocoaLibSpotify;
+			targetProxy = 500EC8CB1439D57500E8A60C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7AAD84C17B11FB9007C22E0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7AAD85117B11FB9007C22E0 /* en */,
+			);
+			name = MainWindow_iPad.xib;
+			sourceTree = "<group>";
+		};
+		A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7AAD85417B11FB9007C22E0 /* en */,
+			);
+			name = MainWindow_iPhone.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		50AF49CC1439CB6E00E4A5EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/include;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		50AF49CD1439CB6E00E4A5EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = $CONFIGURATION_BUILD_DIR/include;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		50AF49CF1439CB6E00E4A5EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hackatune/Hackatune-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Hackatune/Hackatune-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = Hackatune;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		50AF49D01439CB6E00E4A5EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Hackatune/Hackatune-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Hackatune/Hackatune-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = Hackatune;
+				USER_HEADER_SEARCH_PATHS = "\"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include\"";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		50AF49A21439CB6D00E4A5EF /* Build configuration list for PBXProject "Hackatune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AF49CC1439CB6E00E4A5EF /* Debug */,
+				50AF49CD1439CB6E00E4A5EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		50AF49CE1439CB6E00E4A5EF /* Build configuration list for PBXNativeTarget "Hackatune" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				50AF49CF1439CB6E00E4A5EF /* Debug */,
+				50AF49D01439CB6E00E4A5EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 50AF499F1439CB6D00E4A5EF /* Project object */;
+}
