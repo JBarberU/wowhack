@@ -9,6 +9,7 @@
 #import "MusicPlayerViewController.h"
 #include "appkey.c"
 #import "DatabaseHelper.h"
+#import "SVProgressHUD.h"
 
 @implementation MusicPlayerViewController
 
@@ -266,6 +267,7 @@
         }
     }];
     [self.playlistButton setEnabled:buttonEnabled];
+    [SVProgressHUD showSuccessWithStatus:@"Saved tune to playlist!"];
 }
 
 #pragma -
