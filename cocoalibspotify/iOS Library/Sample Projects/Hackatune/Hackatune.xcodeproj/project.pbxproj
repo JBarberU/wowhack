@@ -40,6 +40,7 @@
 		C421731417B159CA00346BED /* lower.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731217B159CA00346BED /* lower.png */; };
 		C421731517B159CA00346BED /* upper.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731317B159CA00346BED /* upper.png */; };
 		C423617F17B25EE4005AC389 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C423617C17B25EE4005AC389 /* icon.png */; };
+		C423618317B262C1005AC389 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 		C4388B4317B1808B002854BA /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4217B1808B002854BA /* background.png */; };
 		C4388B4817B18222002854BA /* plusbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4417B18222002854BA /* plusbutton.png */; };
 		C4388B4917B18222002854BA /* nextbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B4517B18222002854BA /* nextbutton.png */; };
@@ -52,7 +53,6 @@
 		C43ED40517B2428600671343 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40317B2428600671343 /* placeholder.png */; };
 		C43ED40617B2428600671343 /* menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40417B2428600671343 /* menubutton.png */; };
 		C43ED40917B24BA700671343 /* logoutbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40817B24BA700671343 /* logoutbutton.png */; };
-		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 		C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C49602D117B163DF0051969E /* SPLoginResources.bundle */; };
 		C4C2B29117B1C4A20060CE30 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C2B29017B1C4A20060CE30 /* MarqueeLabel.m */; };
 		C4C2B29417B1C57B0060CE30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */; };
@@ -393,7 +393,6 @@
 				C421730C17B1589500346BED /* start_i5.png in Resources */,
 				C421731417B159CA00346BED /* lower.png in Resources */,
 				C421731517B159CA00346BED /* upper.png in Resources */,
-				C48B47AA17B15CFD0071D27F /* icon.png in Resources */,
 				C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */,
 				C4388B4317B1808B002854BA /* background.png in Resources */,
 				C4388B4817B18222002854BA /* plusbutton.png in Resources */,
@@ -411,6 +410,7 @@
 				C43ED40917B24BA700671343 /* logoutbutton.png in Resources */,
 				6B5798EF17B2436F00317770 /* SVProgressHUD.bundle in Resources */,
 				C423617F17B25EE4005AC389 /* icon.png in Resources */,
+				C423618317B262C1005AC389 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
