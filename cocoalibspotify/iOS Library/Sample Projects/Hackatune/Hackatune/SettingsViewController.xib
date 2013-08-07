@@ -43,6 +43,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{17, 20}, {242, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="358943778"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
@@ -73,7 +74,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 387}, {165, 53}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -110,6 +111,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{9, 65}, {250, 253}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="392650253"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -146,6 +148,7 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="849963246"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
@@ -581,6 +584,7 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="AboutTitle">UILabel</string>
 						<string key="Infotext">UITextView</string>
+						<string key="logoutBtn">UIButton</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="AboutTitle">
@@ -590,6 +594,10 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 						<object class="IBToOneOutletInfo" key="Infotext">
 							<string key="name">Infotext</string>
 							<string key="candidateClassName">UITextView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="logoutBtn">
+							<string key="name">logoutBtn</string>
+							<string key="candidateClassName">UIButton</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
