@@ -203,6 +203,37 @@
     [self startPlayback];
 }
 
+#pragma -
+#pragma TouchDelegate
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"Bitches love touch 8)");
+    if ([touches count] == 1)
+        self.touchPoint = [[touches anyObject] locationInView:self.view];
+    else
+        self.touchPoint = CGPointMake(-1.0f,-1.0f);
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (self.touchPoint.x >= 0 && self.touchPoint.y >= 0 && [touches count] == 1) {
+        CGPoint p = [[touches anyObject] locationInView:self.view];
+        
+        CGRect screen = [[UIScreen mainScreen] bounds];
+        float d = p.x - self.touchPoint.x;
+        
+        if ((d < 0 ? d * -1 : d) > screen.size.width/2) {
+            if (d < 0)
+                [self nextTrack:nil];
+            else
+                NSLog(@"Right");
+        }
+    }
+    
+    self.touchPoint = CGPointMake(-1, -1);
+}
+
 #pragma mark -
 #pragma mark NSURLConnectionDataDelegate Methods
 
