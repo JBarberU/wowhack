@@ -25,6 +25,8 @@
 		6B5798D917B212F800317770 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798D817B212F800317770 /* IIViewDeckController.m */; };
 		6B5798E417B217FF00317770 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E117B217FF00317770 /* IISideController.m */; };
 		6B5798E517B217FF00317770 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E317B217FF00317770 /* IIWrapController.m */; };
+		6B5798EF17B2436F00317770 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B5798EC17B2436F00317770 /* SVProgressHUD.bundle */; };
+		6B5798F017B2436F00317770 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798EE17B2436F00317770 /* SVProgressHUD.m */; };
 		A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77958CF17B211E50022B0E3 /* SettingsViewController.m */; };
 		A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77958D017B211E50022B0E3 /* SettingsViewController.xib */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
@@ -104,6 +106,9 @@
 		6B5798E117B217FF00317770 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		6B5798E217B217FF00317770 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
 		6B5798E317B217FF00317770 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		6B5798EC17B2436F00317770 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		6B5798ED17B2436F00317770 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		6B5798EE17B2436F00317770 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		A77958CE17B211E50022B0E3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A77958CF17B211E50022B0E3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A77958D017B211E50022B0E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../SettingsViewController.xib; sourceTree = "<group>"; };
@@ -176,6 +181,7 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				6B5798EB17B2436F00317770 /* SVProgressHUD */,
 				6B5798C417B1E2F200317770 /* CoreData.framework */,
 				C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */,
 				C4388B4E17B18837002854BA /* Default@2x.png */,
@@ -212,6 +218,16 @@
 				50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B5798EB17B2436F00317770 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6B5798EC17B2436F00317770 /* SVProgressHUD.bundle */,
+				6B5798ED17B2436F00317770 /* SVProgressHUD.h */,
+				6B5798EE17B2436F00317770 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
 		A7AAD84917B11FB9007C22E0 /* Hackatune */ = {
@@ -390,6 +406,7 @@
 				C43ED40517B2428600671343 /* placeholder.png in Resources */,
 				C43ED40617B2428600671343 /* menubutton.png in Resources */,
 				C43ED40917B24BA700671343 /* logoutbutton.png in Resources */,
+				6B5798EF17B2436F00317770 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +428,7 @@
 				6B5798E417B217FF00317770 /* IISideController.m in Sources */,
 				6B5798E517B217FF00317770 /* IIWrapController.m in Sources */,
 				A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */,
+				6B5798F017B2436F00317770 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
