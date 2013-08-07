@@ -27,6 +27,8 @@
 		6B5798DF17B2146600317770 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5798DD17B2146600317770 /* MenuViewController.xib */; };
 		6B5798E417B217FF00317770 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E117B217FF00317770 /* IISideController.m */; };
 		6B5798E517B217FF00317770 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E317B217FF00317770 /* IIWrapController.m */; };
+		A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77958CF17B211E50022B0E3 /* SettingsViewController.m */; };
+		A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77958D017B211E50022B0E3 /* SettingsViewController.xib */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
 		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
@@ -104,6 +106,9 @@
 		6B5798E117B217FF00317770 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		6B5798E217B217FF00317770 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
 		6B5798E317B217FF00317770 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		A77958CE17B211E50022B0E3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A77958CF17B211E50022B0E3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A77958D017B211E50022B0E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../SettingsViewController.xib; sourceTree = "<group>"; };
 		A7AAD84A17B11FB9007C22E0 /* appkey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = appkey.c; sourceTree = "<group>"; };
 		A7AAD84C17B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hackatune-Info.plist"; sourceTree = "<group>"; };
@@ -238,6 +243,8 @@
 				6B5798DD17B2146600317770 /* MenuViewController.xib */,
 				A7DB2E8217B1C60C0089E3E5 /* MusicPlayerViewController.h */,
 				A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */,
+				A77958CE17B211E50022B0E3 /* SettingsViewController.h */,
+				A77958CF17B211E50022B0E3 /* SettingsViewController.m */,
 			);
 			path = Hackatune;
 			sourceTree = "<group>";
@@ -253,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DB2E8517B1C6250089E3E5 /* MusicPlayerViewController.xib */,
+				A77958D017B211E50022B0E3 /* SettingsViewController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -378,6 +386,7 @@
 				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
 				A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */,
 				6B5798DF17B2146600317770 /* MenuViewController.xib in Resources */,
+				A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +408,7 @@
 				6B5798DE17B2146600317770 /* MenuViewController.m in Sources */,
 				6B5798E417B217FF00317770 /* IISideController.m in Sources */,
 				6B5798E517B217FF00317770 /* IIWrapController.m in Sources */,
+				A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

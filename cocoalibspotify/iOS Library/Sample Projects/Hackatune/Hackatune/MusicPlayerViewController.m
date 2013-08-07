@@ -291,8 +291,11 @@
         if ((d < 0 ? d * -1 : d) > screen.size.width/2) {
             if (d < 0)
                 [self nextTrack:nil];
-            else
-                NSLog(@"Right");
+            else {
+                SettingsViewController *svc = [[SettingsViewController alloc] initWithSettingsViewDelegate:self];
+                svc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+                [self presentModalViewController:svc animated:YES];
+            }                
         }
     }
     
@@ -409,7 +412,7 @@
 	if (self.presentedViewController != nil) return;
 	
 	controller.allowsCancel = NO;
-	
+	    
 	[self presentModalViewController:controller
                             animated:YES];
 }
@@ -441,7 +444,21 @@
 }
 
 - (void)viewDidUnload {
-    panGestureRecognizer = nil;
     [super viewDidUnload];
 }
+
+#pragma -
+#pragma SettingsViewDelegate
+- (void)didFinish
+{
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)didPressLogout
+{
+    [[SPSession sharedSession] logout:^() {}];
+    UIAlertView *uiav = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Successfully logged out" delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil];
+    [uiav show];
+}
+
 @end
