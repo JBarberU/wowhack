@@ -18,6 +18,10 @@
 		50AF49AF1439CB6D00E4A5EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49AE1439CB6D00E4A5EF /* Foundation.framework */; };
 		50AF49B11439CB6D00E4A5EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */; };
 		50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FAA140143A0B1400FF06D7 /* AVFoundation.framework */; };
+		6B5798C017B1E19C00317770 /* DatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BB17B1E19C00317770 /* DatabaseHelper.m */; };
+		6B5798C117B1E19C00317770 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BC17B1E19C00317770 /* Model.xcdatamodeld */; };
+		6B5798C217B1E19C00317770 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BF17B1E19C00317770 /* Song.m */; };
+		6B5798C517B1E2F200317770 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5798C417B1E2F200317770 /* CoreData.framework */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
 		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
@@ -80,6 +84,12 @@
 		50AF49AE1439CB6D00E4A5EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		50AF49B01439CB6D00E4A5EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		50FAA140143A0B1400FF06D7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6B5798BA17B1E19C00317770 /* DatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHelper.h; sourceTree = "<group>"; };
+		6B5798BB17B1E19C00317770 /* DatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHelper.m; sourceTree = "<group>"; };
+		6B5798BD17B1E19C00317770 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		6B5798BE17B1E19C00317770 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
+		6B5798BF17B1E19C00317770 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
+		6B5798C417B1E2F200317770 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		A7AAD84A17B11FB9007C22E0 /* appkey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = appkey.c; sourceTree = "<group>"; };
 		A7AAD84C17B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hackatune-Info.plist"; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5798C517B1E2F200317770 /* CoreData.framework in Frameworks */,
 				C4C2B29417B1C57B0060CE30 /* QuartzCore.framework in Frameworks */,
 				37E8E0A81746325C000A9747 /* Security.framework in Frameworks */,
 				50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */,
@@ -145,6 +156,7 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				6B5798C417B1E2F200317770 /* CoreData.framework */,
 				C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */,
 				C4388B4E17B18837002854BA /* Default@2x.png */,
 				C4388B4C17B18834002854BA /* Default-568h@2x.png */,
@@ -185,6 +197,11 @@
 		A7AAD84917B11FB9007C22E0 /* Hackatune */ = {
 			isa = PBXGroup;
 			children = (
+				6B5798BA17B1E19C00317770 /* DatabaseHelper.h */,
+				6B5798BB17B1E19C00317770 /* DatabaseHelper.m */,
+				6B5798BC17B1E19C00317770 /* Model.xcdatamodeld */,
+				6B5798BE17B1E19C00317770 /* Song.h */,
+				6B5798BF17B1E19C00317770 /* Song.m */,
 				C4C2B28E17B1C4A20060CE30 /* helpers */,
 				A7AAD84A17B11FB9007C22E0 /* appkey.c */,
 				A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */,
@@ -351,6 +368,9 @@
 				A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */,
 				A7DB2E8417B1C60C0089E3E5 /* MusicPlayerViewController.m in Sources */,
 				C4C2B29117B1C4A20060CE30 /* MarqueeLabel.m in Sources */,
+				6B5798C017B1E19C00317770 /* DatabaseHelper.m in Sources */,
+				6B5798C117B1E19C00317770 /* Model.xcdatamodeld in Sources */,
+				6B5798C217B1E19C00317770 /* Song.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +511,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6B5798BC17B1E19C00317770 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6B5798BD17B1E19C00317770 /* Model.xcdatamodel */,
+			);
+			currentVersion = 6B5798BD17B1E19C00317770 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50AF499F1439CB6D00E4A5EF /* Project object */;
 }
