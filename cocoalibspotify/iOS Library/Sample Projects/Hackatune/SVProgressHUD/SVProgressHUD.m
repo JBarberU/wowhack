@@ -315,6 +315,7 @@ CGFloat SVProgressHUDRingThickness = 6;
         NSDictionary* keyboardInfo = [notification userInfo];
         CGRect keyboardFrame = [[keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
         animationDuration = [[keyboardInfo valueForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+        animationDuration = 0.2;
         
         if(notification.name == UIKeyboardWillShowNotification || notification.name == UIKeyboardDidShowNotification) {
             if(UIInterfaceOrientationIsPortrait(orientation))
@@ -454,7 +455,7 @@ CGFloat SVProgressHUDRingThickness = 6;
         [self registerNotifications];
         self.hudView.transform = CGAffineTransformScale(self.hudView.transform, 1.3, 1.3);
         SVProgressHUD *__weak weakSelf=self;
-        [UIView animateWithDuration:0.15
+        [UIView animateWithDuration:0.6
                               delay:0
                             options:UIViewAnimationOptionAllowUserInteraction | UIViewAnimationCurveEaseOut | UIViewAnimationOptionBeginFromCurrentState
                          animations:^{
@@ -495,7 +496,7 @@ CGFloat SVProgressHUDRingThickness = 6;
     UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, nil);
     UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, string);
     
-    self.fadeOutTimer = [NSTimer timerWithTimeInterval:duration target:self selector:@selector(dismiss) userInfo:nil repeats:NO];
+    self.fadeOutTimer = [NSTimer timerWithTimeInterval:1.4 target:self selector:@selector(dismiss) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:self.fadeOutTimer forMode:NSRunLoopCommonModes];
 }
 
@@ -507,11 +508,11 @@ CGFloat SVProgressHUDRingThickness = 6;
     
     self.activityCount = 0;
      SVProgressHUD *__weak weakSelf=self;
-    [UIView animateWithDuration:0.15
+    [UIView animateWithDuration:0.3
                           delay:0
                         options:UIViewAnimationCurveEaseIn | UIViewAnimationOptionAllowUserInteraction
                      animations:^{
-                         weakSelf.hudView.transform = CGAffineTransformScale(self.hudView.transform, 0.8, 0.8);
+                         weakSelf.hudView.transform = CGAffineTransformScale(self.hudView.transform, 0.2, 0.2);
                          weakSelf.alpha = 0;
                      }
                      completion:^(BOOL finished){
@@ -790,7 +791,7 @@ CGFloat SVProgressHUDRingThickness = 6;
     }
 #endif
     
-    return [UIFont boldSystemFontOfSize:16];
+    return [UIFont fontWithName:@"AvantGardeCapsAlts-Demi.tff" size:16];
 }
 
 - (UIImage *)hudSuccessImage {
