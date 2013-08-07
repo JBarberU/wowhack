@@ -153,7 +153,6 @@
 {
     SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = NO;
-    
 	[self presentModalViewController:controller animated:NO];
 }
 
@@ -282,6 +281,7 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    NSLog(@"bARBEerbBBER");
     if (self.touchPoint.x >= 0 && self.touchPoint.y >= 0 && [touches count] == 1) {
         CGPoint p = [[touches anyObject] locationInView:self.view];
         
@@ -440,4 +440,8 @@
     [self checkPlayState];
 }
 
+- (void)viewDidUnload {
+    panGestureRecognizer = nil;
+    [super viewDidUnload];
+}
 @end

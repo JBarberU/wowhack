@@ -31,11 +31,13 @@
  */
 
 #import "HackatuneAppDelegate.h"
+#import "IIViewDeckController.h"
 
 @implementation HackatuneAppDelegate
 
 @synthesize window = _window;
 @synthesize mainViewController = _mainViewController;
+@synthesize menuViewController = _menuViewController;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -44,14 +46,48 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    [self.window makeKeyAndVisible];
     
-    self.mainViewController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
-    [self.window setRootViewController:self.mainViewController];
+    MenuViewController* leftController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    MusicPlayerViewController *centerController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:centerController];
+    [navController setNavigationBarHidden:YES];
+    
+    IIViewDeckController* deckController = [[IIViewDeckController alloc] initWithCenterViewController:navController leftViewController:leftController];
+    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerContained];
+    deckController.rightSize = 100;
+    
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
 
-    [self.mainViewController finishInitiation];
+    self.menuViewController = deckController.leftController;
+    self.mainViewController = deckController.centerController;
+    
+    
+    /* To adjust speed of open/close animations, set either of these two properties. */
+    // deckController.openSlideAnimationDuration = 0.15f;
+    // deckController.closeSlideAnimationDuration = 0.5f;
+    
+    self.window.rootViewController = deckController;
+    [self.window makeKeyAndVisible];
+    [centerController finishInitiation];
+
     return YES;
+}
+
+- (IIViewDeckController*)generateControllerStack {
+    MenuViewController* leftController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    MusicPlayerViewController *centerController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:centerController];
+    [navController setNavigationBarHidden:YES];
+    
+    IIViewDeckController* deckController = [[IIViewDeckController alloc] initWithCenterViewController:navController leftViewController:leftController];
+    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerContained];
+    deckController.rightSize = 100;
+    
+    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
+    [centerController finishInitiation];
+    return deckController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -91,7 +127,7 @@
 	 Save data if appropriate.
 	 See also applicationDidEnterBackground:.
 	 */
-    [self.mainViewController logout];
+    //[self.mainViewController logout];
 }
 
 

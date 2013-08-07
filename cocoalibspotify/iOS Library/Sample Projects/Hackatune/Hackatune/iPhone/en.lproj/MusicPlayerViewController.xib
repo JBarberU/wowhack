@@ -65,6 +65,9 @@
 						<reference key="NSNextKeyView" ref="762412113"/>
 						<string key="NSReuseIdentifierKey">_NS:544</string>
 						<int key="IBUIContentMode">1</int>
+						<object class="NSArray" key="IBUIGestureRecognizers" id="0">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
@@ -223,7 +226,6 @@
 						<string key="NSFrame">{{225, 454}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="729612143"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -278,6 +280,7 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="208744912"/>
 				<string key="NSReuseIdentifierKey">_NS:180</string>
+				<reference key="IBUIGestureRecognizers" ref="0"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 		</object>
@@ -373,9 +376,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBObjectRecord">
 						<int key="objectID">0</int>
-						<object class="NSArray" key="object" id="0">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-						</object>
+						<reference key="object" ref="0"/>
 						<reference key="children" ref="1000"/>
 						<nil key="parent"/>
 					</object>
@@ -421,6 +422,9 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
 						<reference key="object" ref="546926377"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 						<reference key="parent" ref="729612143"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -515,7 +519,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">62</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -536,12 +540,14 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addTrackToPlaylist:</string>
+							<string>handlePan:</string>
 							<string>nextTrack:</string>
 							<string>playTrack:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
+							<string>UIPanGestureRecognizer</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -551,6 +557,7 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addTrackToPlaylist:</string>
+							<string>handlePan:</string>
 							<string>nextTrack:</string>
 							<string>playTrack:</string>
 						</object>
@@ -559,6 +566,10 @@
 							<object class="IBActionInfo">
 								<string key="name">addTrackToPlaylist:</string>
 								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">handlePan:</string>
+								<string key="candidateClassName">UIPanGestureRecognizer</string>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">nextTrack:</string>
@@ -576,6 +587,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView1</string>
 							<string>coverView2</string>
+							<string>panGestureRecognizer</string>
 							<string>playPauseButton</string>
 							<string>playlistButton</string>
 							<string>trackArtist</string>
@@ -586,6 +598,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIImageView</string>
 							<string>UIImageView</string>
+							<string>UIPanGestureRecognizer</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>MarqueeLabel</string>
@@ -599,6 +612,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView1</string>
 							<string>coverView2</string>
+							<string>panGestureRecognizer</string>
 							<string>playPauseButton</string>
 							<string>playlistButton</string>
 							<string>trackArtist</string>
@@ -614,6 +628,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">coverView2</string>
 								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">panGestureRecognizer</string>
+								<string key="candidateClassName">UIPanGestureRecognizer</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">playPauseButton</string>
