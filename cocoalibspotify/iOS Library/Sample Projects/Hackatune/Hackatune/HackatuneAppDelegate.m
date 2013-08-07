@@ -42,6 +42,7 @@
 {
     self.mainViewController = [[MusicPlayerViewController alloc] init];
     [self.window addSubview:self.mainViewController.view];
+	[self.window makeKeyAndVisible];
     return YES;
 }
 

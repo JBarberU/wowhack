@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
+#import "MarqueeLabel.h"
 
 
 @interface MusicPlayerViewController : UIViewController <SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate>
 {
-	UILabel *_trackTitle;
-	UILabel *_trackArtist;
+	MarqueeLabel *_trackTitle;
+	MarqueeLabel *_trackArtist;
 	UIImageView *_coverView;
     UIButton *_playPauseButton;
     UIImage *_playButtonImage;
@@ -30,8 +31,8 @@
     int _currentTrackIndex;
 }
 
-@property (nonatomic, strong) IBOutlet UILabel *trackTitle;
-@property (nonatomic, strong) IBOutlet UILabel *trackArtist;
+@property (nonatomic, strong) IBOutlet MarqueeLabel *trackTitle;
+@property (nonatomic, strong) IBOutlet MarqueeLabel *trackArtist;
 @property (nonatomic, strong) IBOutlet UIImageView *coverView;
 @property (nonatomic, strong) IBOutlet UIView *view;
 @property (nonatomic, strong) UIFont *mediumFont;

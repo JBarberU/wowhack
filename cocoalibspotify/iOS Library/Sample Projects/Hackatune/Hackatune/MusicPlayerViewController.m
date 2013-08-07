@@ -41,6 +41,21 @@
     self.playButtonImage = [UIImage imageNamed:@"playbutton.png"];
     self.pauseButtonImage = [UIImage imageNamed:@"pausebutton.png"];
     
+    self.mediumFont = [UIFont fontWithName:@"AvantGardeCapsAltsMedium" size:18];
+    self.boldFont  = [UIFont fontWithName:@"AvantGardeCapsAltsDemi" size:30];
+    
+    [self.trackArtist setFont:self.mediumFont];
+    [self.trackTitle setFont:self.boldFont];
+    
+    self.trackTitle.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    self.trackArtist.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    
+    self.trackArtist.textColor = [UIColor whiteColor];
+    self.trackTitle.textColor = [UIColor whiteColor];
+    
+    self.trackTitle.fadeLength = 25.0f;
+    self.trackArtist.fadeLength = 25.0f;
+    
     NSURLRequest *jsonRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://hackatune.gotconsulting.se/wow.json"]];
     self.jsonData = [[NSMutableData alloc] init];
     self.jsonHTTPConnection = [[NSURLConnection alloc] initWithRequest:jsonRequest delegate:self startImmediately:YES];
