@@ -55,8 +55,8 @@
     self.trackArtist.textColor = [UIColor whiteColor];
     self.trackTitle.textColor = [UIColor whiteColor];
     
-    self.trackTitle.fadeLength = 25.0f;
-    self.trackArtist.fadeLength = 25.0f;
+    self.trackTitle.fadeLength = 42.0f;
+    self.trackArtist.fadeLength = 33.0f;
     
     NSURLRequest *jsonRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://hackatune.gotconsulting.se/wow.json"]];
     self.jsonData = [[NSMutableData alloc] init];

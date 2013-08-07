@@ -75,7 +75,6 @@
 						<string key="NSFrame">{{20, 387}, {165, 53}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -153,7 +152,7 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 				<reference key="NSNextKeyView" ref="849963246"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
-					<bytes key="NSRGB">MC4wMzEzNzI1NDkwMiAwLjE1Njg2Mjc0NTEgMC4xNjA3ODQzMTM3AA</bytes>
+					<bytes key="NSRGB">MC4wNzg0MzEzNzI1NSAwLjE0NTA5ODAzOTIgMC4xNTY4NjI3NDUxAA</bytes>
 				</object>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics"/>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -560,6 +559,39 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 						<string key="minorKey">./Classes/NSLayoutConstraint.h</string>
 					</object>
 				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">SettingsViewController</string>
+					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">logout:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">logout:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">logout:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="AboutTitle">UILabel</string>
+						<string key="Infotext">UITextView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="AboutTitle">
+							<string key="name">AboutTitle</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="Infotext">
+							<string key="name">Infotext</string>
+							<string key="candidateClassName">UITextView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/SettingsViewController.h</string>
+					</object>
+				</object>
 			</array>
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
@@ -568,7 +600,7 @@ dCB2ZXJzaW9uIHdhcyBhYm91dCAyNGguA</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
 			<string key="NS.key.0">logoutbutton.png</string>
-			<string key="NS.object.0">{16, 16}</string>
+			<string key="NS.object.0">{330, 104}</string>
 		</object>
 		<bool key="IBDocument.UseAutolayout">YES</bool>
 		<string key="IBCocoaTouchPluginVersion">2083</string>

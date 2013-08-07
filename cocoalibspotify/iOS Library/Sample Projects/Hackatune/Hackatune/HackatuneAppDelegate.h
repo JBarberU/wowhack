@@ -52,6 +52,4 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-- (IIViewDeckController*)generateControllerStack;
-
 @end
