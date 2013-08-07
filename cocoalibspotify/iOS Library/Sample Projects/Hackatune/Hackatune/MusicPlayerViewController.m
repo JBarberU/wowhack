@@ -84,7 +84,11 @@
 	[self addObserver:self forKeyPath:@"currentTrack.name" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.artists" options:0 context:nil];
 	[self addObserver:self forKeyPath:@"currentTrack.album.cover.image" options:0 context:nil];
-    
+}
+
+
+- (void)finishInitiation
+{
     NSLog(@"U: %@ C: %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"spotifyUser"], [[NSUserDefaults standardUserDefaults] valueForKey:@"spotifyCredential"]);
     
     NSString *user = [[NSUserDefaults standardUserDefaults] valueForKey:@"spotifyUser"];
@@ -93,9 +97,6 @@
         [[SPSession sharedSession] attemptLoginWithUserName:user existingCredential:credentials];
     else
         [self performSelector:@selector(showLogin)];
-    
-
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -201,7 +202,6 @@
     
     [self startPlayback];
 }
-
 
 #pragma mark -
 #pragma mark NSURLConnectionDataDelegate Methods

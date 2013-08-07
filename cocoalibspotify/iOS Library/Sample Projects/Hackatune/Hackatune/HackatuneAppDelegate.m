@@ -40,9 +40,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.mainViewController = [[MusicPlayerViewController alloc] init];
-    [self.window addSubview:self.mainViewController.view];
-	[self.window makeKeyAndVisible];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    [self.window makeKeyAndVisible];
+    
+    self.mainViewController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
+    [self.window setRootViewController:self.mainViewController];
+
+    [self.mainViewController finishInitiation];
     return YES;
 }
 

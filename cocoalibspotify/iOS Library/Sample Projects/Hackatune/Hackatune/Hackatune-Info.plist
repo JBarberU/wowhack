@@ -39,10 +39,11 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string>MainWindow_iPhone</string>
-	<key>NSMainNibFile~ipad</key>
-	<string>MainWindow_iPad</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AvantGardeCapsAlts-Medium.ttf</string>
+		<string>AvantGardeCapsAlts-Demi.ttf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
@@ -56,11 +57,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>AvantGardeCapsAlts-Medium.ttf</string>
-		<string>AvantGardeCapsAlts-Demi.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

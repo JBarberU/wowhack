@@ -56,5 +56,6 @@
 - (void)startPlayback;
 - (void)checkPlayState;
 - (void)logout;
+- (void)finishInitiation;
 
 @end
