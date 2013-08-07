@@ -19,6 +19,11 @@
 
 - (id)initWithSettingsViewDelegate:(id<SettingsViewDelegate>)delegate;
 - (IBAction)logout:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *AboutTitle;
+@property (weak, nonatomic) IBOutlet UITextView *Infotext;
+@property (weak,nonatomic) UIFont *titleFont;
+@property (weak,nonatomic) UIFont *bodyFont;
+
 
 @property (nonatomic, strong) id<SettingsViewDelegate> delegate;
 

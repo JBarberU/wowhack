@@ -38,6 +38,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    self.titleFont = [UIFont fontWithName:@"AvantGardeCapsAltsDemi" size:35];
+    self.bodyFont  = [UIFont fontWithName:@"AvantGardeCapsAltsMedium" size:15];
+    
+    [self.AboutTitle setFont:self.titleFont];
+    [_Infotext setFont:self.bodyFont];
+    
+    _Infotext.text = [_Infotext.text uppercaseString];
+    
+    self.AboutTitle.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    self.Infotext.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    
+    self.Infotext.textColor = [UIColor whiteColor];
+    self.AboutTitle.textColor = [UIColor whiteColor];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,4 +72,9 @@
     }
 }
 
+- (void)viewDidUnload {
+    [self setAboutTitle:nil];
+    [self setInfotext:nil];
+    [super viewDidUnload];
+}
 @end

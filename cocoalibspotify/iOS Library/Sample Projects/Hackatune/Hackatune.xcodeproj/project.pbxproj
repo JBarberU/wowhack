@@ -46,6 +46,9 @@
 		C4388B5117B18BAA002854BA /* pausebutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5017B18BAA002854BA /* pausebutton.png */; };
 		C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */; };
 		C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */; };
+		C43ED40517B2428600671343 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40317B2428600671343 /* placeholder.png */; };
+		C43ED40617B2428600671343 /* menubutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40417B2428600671343 /* menubutton.png */; };
+		C43ED40917B24BA700671343 /* logoutbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = C43ED40817B24BA700671343 /* logoutbutton.png */; };
 		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 		C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C49602D117B163DF0051969E /* SPLoginResources.bundle */; };
 		C4C2B29117B1C4A20060CE30 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C2B29017B1C4A20060CE30 /* MarqueeLabel.m */; };
@@ -127,6 +130,9 @@
 		C4388B5017B18BAA002854BA /* pausebutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pausebutton.png; sourceTree = "<group>"; };
 		C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeCapsAlts-Demi.ttf"; sourceTree = "<group>"; };
 		C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeCapsAlts-Medium.ttf"; sourceTree = "<group>"; };
+		C43ED40317B2428600671343 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeholder.png; sourceTree = "<group>"; };
+		C43ED40417B2428600671343 /* menubutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubutton.png; sourceTree = "<group>"; };
+		C43ED40817B24BA700671343 /* logoutbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoutbutton.png; sourceTree = "<group>"; };
 		C48B47A917B15CFD0071D27F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C49602D117B163DF0051969E /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SPLoginResources.bundle; path = ../../SPLoginResources.bundle; sourceTree = "<group>"; };
 		C4C2B28F17B1C4A20060CE30 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
@@ -260,6 +266,9 @@
 		C421730817B1589500346BED /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C43ED40817B24BA700671343 /* logoutbutton.png */,
+				C43ED40317B2428600671343 /* placeholder.png */,
+				C43ED40417B2428600671343 /* menubutton.png */,
 				C4388B5217B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf */,
 				C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */,
 				C4388B5017B18BAA002854BA /* pausebutton.png */,
@@ -378,6 +387,9 @@
 				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
 				A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */,
 				A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */,
+				C43ED40517B2428600671343 /* placeholder.png in Resources */,
+				C43ED40617B2428600671343 /* menubutton.png in Resources */,
+				C43ED40917B24BA700671343 /* logoutbutton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
