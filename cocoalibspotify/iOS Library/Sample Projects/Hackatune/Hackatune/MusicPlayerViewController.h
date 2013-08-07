@@ -51,6 +51,8 @@
 @property (nonatomic, strong) NSArray *tracks;
 @property (nonatomic) int currentTrackIndex;
 
+@property (nonatomic) CGPoint touchPoint;
+
 - (IBAction)playTrack:(id)sender;
 - (IBAction)nextTrack:(id)sender;
 - (void)startPlayback;
