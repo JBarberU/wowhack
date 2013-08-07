@@ -22,6 +22,8 @@
 		6B5798C117B1E19C00317770 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BC17B1E19C00317770 /* Model.xcdatamodeld */; };
 		6B5798C217B1E19C00317770 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BF17B1E19C00317770 /* Song.m */; };
 		6B5798C517B1E2F200317770 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5798C417B1E2F200317770 /* CoreData.framework */; };
+		A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77958CF17B211E50022B0E3 /* SettingsViewController.m */; };
+		A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77958D017B211E50022B0E3 /* SettingsViewController.xib */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
 		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
@@ -90,6 +92,9 @@
 		6B5798BE17B1E19C00317770 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		6B5798BF17B1E19C00317770 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
 		6B5798C417B1E2F200317770 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A77958CE17B211E50022B0E3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		A77958CF17B211E50022B0E3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		A77958D017B211E50022B0E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../SettingsViewController.xib; sourceTree = "<group>"; };
 		A7AAD84A17B11FB9007C22E0 /* appkey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = appkey.c; sourceTree = "<group>"; };
 		A7AAD84C17B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hackatune-Info.plist"; sourceTree = "<group>"; };
@@ -215,6 +220,8 @@
 				A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */,
 				A7DB2E8217B1C60C0089E3E5 /* MusicPlayerViewController.h */,
 				A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */,
+				A77958CE17B211E50022B0E3 /* SettingsViewController.h */,
+				A77958CF17B211E50022B0E3 /* SettingsViewController.m */,
 			);
 			path = Hackatune;
 			sourceTree = "<group>";
@@ -230,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				A7DB2E8517B1C6250089E3E5 /* MusicPlayerViewController.xib */,
+				A77958D017B211E50022B0E3 /* SettingsViewController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -354,6 +362,7 @@
 				C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */,
 				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
 				A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */,
+				A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +380,7 @@
 				6B5798C017B1E19C00317770 /* DatabaseHelper.m in Sources */,
 				6B5798C117B1E19C00317770 /* Model.xcdatamodeld in Sources */,
 				6B5798C217B1E19C00317770 /* Song.m in Sources */,
+				A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

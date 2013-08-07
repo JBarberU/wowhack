@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
 #import "MarqueeLabel.h"
+#import "SettingsViewController.h"
 
-
-@interface MusicPlayerViewController : UIViewController <SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate>
+@interface MusicPlayerViewController : UIViewController <SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate, SettingsViewDelegate>
 {
 	MarqueeLabel *_trackTitle;
 	MarqueeLabel *_trackArtist;
