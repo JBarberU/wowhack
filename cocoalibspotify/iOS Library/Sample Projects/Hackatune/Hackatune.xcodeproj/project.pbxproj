@@ -20,11 +20,10 @@
 		50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FAA140143A0B1400FF06D7 /* AVFoundation.framework */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
 		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
-		A7AAD85D17B11FB9007C22E0 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */; };
-		A7AAD85E17B11FB9007C22E0 /* MainWindow_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */; };
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
-		A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */; };
 		A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */; };
+		A7DB2E8417B1C60C0089E3E5 /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */; };
+		A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7DB2E8517B1C6250089E3E5 /* MusicPlayerViewController.xib */; };
 		C421730B17B1589500346BED /* start_i4.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730917B1589500346BED /* start_i4.png */; };
 		C421730C17B1589500346BED /* start_i5.png in Resources */ = {isa = PBXBuildFile; fileRef = C421730A17B1589500346BED /* start_i5.png */; };
 		C421731417B159CA00346BED /* lower.png in Resources */ = {isa = PBXBuildFile; fileRef = C421731217B159CA00346BED /* lower.png */; };
@@ -83,13 +82,12 @@
 		A7AAD84C17B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Hackatune-Info.plist"; sourceTree = "<group>"; };
 		A7AAD84E17B11FB9007C22E0 /* Hackatune-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Hackatune-Prefix.pch"; sourceTree = "<group>"; };
-		A7AAD85117B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPad.xib; sourceTree = "<group>"; };
-		A7AAD85417B11FB9007C22E0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow_iPhone.xib; sourceTree = "<group>"; };
 		A7AAD85517B11FB9007C22E0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A7AAD85617B11FB9007C22E0 /* RotatableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatableViewController.h; sourceTree = "<group>"; };
-		A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatableViewController.m; sourceTree = "<group>"; };
 		A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HackatuneAppDelegate.h; sourceTree = "<group>"; };
 		A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HackatuneAppDelegate.m; sourceTree = "<group>"; };
+		A7DB2E8217B1C60C0089E3E5 /* MusicPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicPlayerViewController.h; sourceTree = "<group>"; };
+		A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerViewController.m; sourceTree = "<group>"; };
+		A7DB2E8617B1C6250089E3E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MusicPlayerViewController.xib; sourceTree = "<group>"; };
 		C421730917B1589500346BED /* start_i4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_i4.png; sourceTree = "<group>"; };
 		C421730A17B1589500346BED /* start_i5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = start_i5.png; sourceTree = "<group>"; };
 		C421731217B159CA00346BED /* lower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lower.png; sourceTree = "<group>"; };
@@ -187,11 +185,11 @@
 				A7AAD84F17B11FB9007C22E0 /* iPad */,
 				A7AAD85217B11FB9007C22E0 /* iPhone */,
 				A7AAD85517B11FB9007C22E0 /* main.m */,
-				A7AAD85617B11FB9007C22E0 /* RotatableViewController.h */,
-				A7AAD85717B11FB9007C22E0 /* RotatableViewController.m */,
 				C421730817B1589500346BED /* graphics */,
 				A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */,
 				A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */,
+				A7DB2E8217B1C60C0089E3E5 /* MusicPlayerViewController.h */,
+				A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */,
 			);
 			path = Hackatune;
 			sourceTree = "<group>";
@@ -199,7 +197,6 @@
 		A7AAD84F17B11FB9007C22E0 /* iPad */ = {
 			isa = PBXGroup;
 			children = (
-				A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */,
 			);
 			path = iPad;
 			sourceTree = "<group>";
@@ -207,7 +204,7 @@
 		A7AAD85217B11FB9007C22E0 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
-				A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */,
+				A7DB2E8517B1C6250089E3E5 /* MusicPlayerViewController.xib */,
 			);
 			path = iPhone;
 			sourceTree = "<group>";
@@ -307,8 +304,6 @@
 			files = (
 				A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */,
 				A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */,
-				A7AAD85D17B11FB9007C22E0 /* MainWindow_iPad.xib in Resources */,
-				A7AAD85E17B11FB9007C22E0 /* MainWindow_iPhone.xib in Resources */,
 				C421730B17B1589500346BED /* start_i4.png in Resources */,
 				C421730C17B1589500346BED /* start_i5.png in Resources */,
 				C421731417B159CA00346BED /* lower.png in Resources */,
@@ -324,6 +319,7 @@
 				C4388B5117B18BAA002854BA /* pausebutton.png in Resources */,
 				C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */,
 				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
+				A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,8 +331,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AAD85F17B11FB9007C22E0 /* main.m in Sources */,
-				A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */,
 				A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */,
+				A7DB2E8417B1C60C0089E3E5 /* MusicPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,20 +355,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		A7AAD85017B11FB9007C22E0 /* MainWindow_iPad.xib */ = {
+		A7DB2E8517B1C6250089E3E5 /* MusicPlayerViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A7AAD85117B11FB9007C22E0 /* en */,
+				A7DB2E8617B1C6250089E3E5 /* en */,
 			);
-			name = MainWindow_iPad.xib;
-			sourceTree = "<group>";
-		};
-		A7AAD85317B11FB9007C22E0 /* MainWindow_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7AAD85417B11FB9007C22E0 /* en */,
-			);
-			name = MainWindow_iPhone.xib;
+			name = MusicPlayerViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

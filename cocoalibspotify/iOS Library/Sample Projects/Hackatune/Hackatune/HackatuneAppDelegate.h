@@ -32,53 +32,15 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
+#import "MusicPlayerViewController.h"
 
-@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate> {
-	UIViewController *_mainViewController;
-	UITextField *_trackURIField;
-	UILabel *_trackTitle;
-	UILabel *_trackArtist;
-	UIImageView *_coverView;
-	SPPlaybackManager *_playbackManager;
-	SPTrack *_currentTrack;
-    
-    NSString *_currentTrackURI;
-    
-    NSURLConnection *_jsonHTTPConnection;
-    NSMutableData *_jsonData;
-    
-    UIImage *_playButtonImage;
-    UIImage *_pauseButtonImage;
-    UIButton *_playPauseButton;
-    
-    NSArray *_TEST_TRACKS;
-    int _TEST_CURRENT_INDEX;
+@interface HackatuneAppDelegate : NSObject <UIApplicationDelegate> {
+	MusicPlayerViewController *_mainViewController;
 }
 
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
-@property (nonatomic, strong) IBOutlet UIViewController *mainViewController;
-@property (nonatomic, strong) IBOutlet UITextField *trackURIField;
-@property (nonatomic, strong) IBOutlet UILabel *trackTitle;
-@property (nonatomic, strong) IBOutlet UILabel *trackArtist;
-@property (nonatomic, strong) IBOutlet UIImageView *coverView;
+@property (nonatomic, strong) IBOutlet MusicPlayerViewController *mainViewController;
 
-@property (nonatomic, strong) SPTrack *currentTrack;
-@property (nonatomic, strong) SPPlaybackManager *playbackManager;
-@property (nonatomic, strong) NSString *currentTrackURI;
-@property (nonatomic, strong) NSArray *TEST_TRACKS;
-@property (nonatomic, strong) NSURLConnection *jsonHTTPConnection;
-@property (nonatomic, strong) NSMutableData *jsonData;
-@property (nonatomic) int TEST_CURRENT_INDEX;
-@property (nonatomic, strong) UIFont *mediumFont;
-@property (nonatomic, strong) UIFont *boldFont;
-@property (nonatomic, strong) UIImage *playButtonImage;
-@property (nonatomic, strong) UIImage *pauseButtonImage;
-@property (nonatomic, strong) IBOutlet UIButton *playPauseButton;
-
-- (IBAction)playTrack:(id)sender;
-- (IBAction)nextTrack:(id)sender;
-- (void)startPlayback;
-- (void)checkPlayState;
 
 @end
