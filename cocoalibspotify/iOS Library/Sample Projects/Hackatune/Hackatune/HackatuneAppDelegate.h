@@ -32,12 +32,13 @@
 
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
+#import "MarqueeLabel.h"
 
 @interface HackatuneAppDelegate : NSObject <UIApplicationDelegate, SPSessionDelegate, SPSessionPlaybackDelegate, SPPlaybackManagerDelegate, NSURLConnectionDataDelegate> {
 	UIViewController *_mainViewController;
 	UITextField *_trackURIField;
-	UILabel *_trackTitle;
-	UILabel *_trackArtist;
+	MarqueeLabel *_trackTitle;
+	MarqueeLabel *_trackArtist;
 	UIImageView *_coverView;
 	SPPlaybackManager *_playbackManager;
 	SPTrack *_currentTrack;

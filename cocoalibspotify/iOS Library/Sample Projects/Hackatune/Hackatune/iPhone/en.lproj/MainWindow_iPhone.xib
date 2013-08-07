@@ -79,24 +79,9 @@
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<object class="IBUIImageView" id="440109214">
-								<reference key="NSNextResponder" ref="729612143"/>
-								<int key="NSvFlags">1316</int>
-								<string key="NSFrameSize">{320, 165}</string>
-								<reference key="NSSuperview" ref="729612143"/>
-								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="388069107"/>
-								<string key="NSReuseIdentifierKey">_NS:9</string>
-								<bool key="IBUIUserInteractionEnabled">NO</bool>
-								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">upper.png</string>
-								</object>
-							</object>
 							<object class="IBUIImageView" id="156147919">
 								<reference key="NSNextResponder" ref="729612143"/>
-								<int key="NSvFlags">1325</int>
+								<int key="NSvFlags">1293</int>
 								<string key="NSFrame">{{0, 460}, {320, 108}}</string>
 								<reference key="NSSuperview" ref="729612143"/>
 								<reference key="NSWindow"/>
@@ -153,11 +138,15 @@
 							<object class="IBUILabel" id="388069107">
 								<reference key="NSNextResponder" ref="729612143"/>
 								<int key="NSvFlags">1314</int>
-								<string key="NSFrame">{{0, 65}, {320, 30}}</string>
+								<string key="NSFrame">{{40, 65}, {253, 30}}</string>
 								<reference key="NSSuperview" ref="729612143"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="816322466"/>
 								<string key="NSReuseIdentifierKey">_NS:327</string>
+								<object class="NSColor" key="IBUIBackgroundColor">
+									<int key="NSColorSpace">1</int>
+									<bytes key="NSRGB">MSAwLjk5OTk3NDM3IDAuOTk5OTkxMjk3NyAwAA</bytes>
+								</object>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -214,6 +203,21 @@
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">15</double>
 									<int key="NSfFlags">16</int>
+								</object>
+							</object>
+							<object class="IBUIImageView" id="440109214">
+								<reference key="NSNextResponder" ref="729612143"/>
+								<int key="NSvFlags">1317</int>
+								<string key="NSFrameSize">{320, 165}</string>
+								<reference key="NSSuperview" ref="729612143"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="388069107"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<bool key="IBUIUserInteractionEnabled">NO</bool>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<object class="NSCustomResource" key="IBUIImage">
+									<string key="NSClassName">NSImage</string>
+									<string key="NSResourceName">upper.png</string>
 								</object>
 							</object>
 							<object class="IBUIButton" id="549128201">
@@ -461,11 +465,11 @@
 							<reference ref="388069107"/>
 							<reference ref="816322466"/>
 							<reference ref="546926377"/>
-							<reference ref="440109214"/>
 							<reference ref="156147919"/>
 							<reference ref="208744912"/>
 							<reference ref="350826736"/>
 							<reference ref="25226168"/>
+							<reference ref="440109214"/>
 							<reference ref="549128201"/>
 						</object>
 						<reference key="parent" ref="380026005"/>
@@ -528,7 +532,9 @@
 					<string>10.IBPluginDependency</string>
 					<string>15.IBPluginDependency</string>
 					<string>16.IBPluginDependency</string>
+					<string>17.CustomClassName</string>
 					<string>17.IBPluginDependency</string>
+					<string>18.CustomClassName</string>
 					<string>18.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
 					<string>2.IBPluginDependency</string>
@@ -550,7 +556,9 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>MarqueeLabel</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+					<string>MarqueeLabel</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSMutableDictionary">
 						<bool key="EncodedWithXMLCoder">YES</bool>
@@ -690,6 +698,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/HackatuneAppDelegate.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">MarqueeLabel</string>
+					<string key="superclassName">UILabel</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/MarqueeLabel.h</string>
 					</object>
 				</object>
 			</object>

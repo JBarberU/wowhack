@@ -32,6 +32,7 @@
 
 #import "HackatuneAppDelegate.h"
 #include "appkey.c"
+#import "MarqueeLabel.h"
 
 @implementation HackatuneAppDelegate
 
@@ -64,8 +65,18 @@
     //Load Fonts
     _mediumFont = [UIFont fontWithName:@"AvantGardeCapsAltsMedium" size:18];
     _boldFont  = [UIFont fontWithName:@"AvantGardeCapsAltsDemi" size:30];
+    
     [_trackArtist setFont:_mediumFont];
     [_trackTitle setFont:_boldFont];
+    
+    _trackTitle.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    _trackArtist.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.0];
+    
+    _trackArtist.textColor = [UIColor whiteColor];
+    _trackTitle.textColor = [UIColor whiteColor];
+    
+    _trackTitle.fadeLength = 25.0f;
+    _trackArtist.fadeLength = 25.0f;
     
 
     

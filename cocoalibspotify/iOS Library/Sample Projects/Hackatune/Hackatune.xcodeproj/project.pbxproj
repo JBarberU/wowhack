@@ -40,6 +40,8 @@
 		C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */; };
 		C48B47AA17B15CFD0071D27F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = C48B47A917B15CFD0071D27F /* icon.png */; };
 		C49602D217B163DF0051969E /* SPLoginResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C49602D117B163DF0051969E /* SPLoginResources.bundle */; };
+		C4C2B29117B1C4A20060CE30 /* MarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4C2B29017B1C4A20060CE30 /* MarqueeLabel.m */; };
+		C4C2B29417B1C57B0060CE30 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,9 @@
 		C4388B5317B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvantGardeCapsAlts-Medium.ttf"; sourceTree = "<group>"; };
 		C48B47A917B15CFD0071D27F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		C49602D117B163DF0051969E /* SPLoginResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SPLoginResources.bundle; path = ../../SPLoginResources.bundle; sourceTree = "<group>"; };
+		C4C2B28F17B1C4A20060CE30 /* MarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarqueeLabel.h; sourceTree = "<group>"; };
+		C4C2B29017B1C4A20060CE30 /* MarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarqueeLabel.m; sourceTree = "<group>"; };
+		C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C2B29417B1C57B0060CE30 /* QuartzCore.framework in Frameworks */,
 				37E8E0A81746325C000A9747 /* Security.framework in Frameworks */,
 				50FAA141143A0B1400FF06D7 /* AVFoundation.framework in Frameworks */,
 				5002BD811439E90400FEAB3C /* libstdc++.dylib in Frameworks */,
@@ -141,6 +147,7 @@
 		50AF499D1439CB6D00E4A5EF = {
 			isa = PBXGroup;
 			children = (
+				C4C2B29317B1C57B0060CE30 /* QuartzCore.framework */,
 				C4388B4E17B18837002854BA /* Default@2x.png */,
 				C4388B4C17B18834002854BA /* Default-568h@2x.png */,
 				C49602D117B163DF0051969E /* SPLoginResources.bundle */,
@@ -180,6 +187,7 @@
 		A7AAD84917B11FB9007C22E0 /* Hackatune */ = {
 			isa = PBXGroup;
 			children = (
+				C4C2B28E17B1C4A20060CE30 /* helpers */,
 				A7AAD84A17B11FB9007C22E0 /* appkey.c */,
 				A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */,
 				A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */,
@@ -228,6 +236,15 @@
 				C421730A17B1589500346BED /* start_i5.png */,
 			);
 			path = graphics;
+			sourceTree = "<group>";
+		};
+		C4C2B28E17B1C4A20060CE30 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C4C2B28F17B1C4A20060CE30 /* MarqueeLabel.h */,
+				C4C2B29017B1C4A20060CE30 /* MarqueeLabel.m */,
+			);
+			path = helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +354,7 @@
 				A7AAD85F17B11FB9007C22E0 /* main.m in Sources */,
 				A7AAD86017B11FB9007C22E0 /* RotatableViewController.m in Sources */,
 				A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */,
+				C4C2B29117B1C4A20060CE30 /* MarqueeLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
