@@ -257,6 +257,9 @@
     if (!self.hackatunePlaylist) {
         NSLog(@"Hackatune playlist unavailable");
         return;
+    } else if (!self.currentTrack) {
+        NSLog(@"No track has been loaded");
+        return;
     }
     
     static bool buttonEnabled = NO;
@@ -264,6 +267,8 @@
         if (error) {
             NSLog(@"Could not add track to playlist!");
             buttonEnabled = YES;
+        } else {
+        
         }
     }];
     [self.playlistButton setEnabled:buttonEnabled];
@@ -382,7 +387,7 @@
                     }];
                 }
                 
-                [self.playlistButton setEnabled:(self.hackatunePlaylist != nil)];
+                [self.playlistButton setEnabled:(self.hackatunePlaylist != nil && self.currentTrack != nil)];
             }];
         }];
     }];
