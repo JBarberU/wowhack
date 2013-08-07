@@ -236,6 +236,8 @@
     if (!self.tracks && [self.tracks count] <= 0)
         return;
     
+    [self.playlistButton setEnabled:(self.hackatunePlaylist != nil)];
+    
     ++self.currentTrackIndex;
     
     if (self.currentTrackIndex >= [self.tracks count] || self.currentTrackIndex < 0) {
@@ -257,10 +259,14 @@
         return;
     }
     
+    static bool buttonEnabled = NO;
     [self.hackatunePlaylist addItem:self.currentTrack atIndex:0 callback:^(NSError *error) {
-        if (error)
+        if (error) {
             NSLog(@"Could not add track to playlist!");
+            buttonEnabled = YES;
+        }
     }];
+    [self.playlistButton setEnabled:buttonEnabled];
 }
 
 #pragma -
@@ -364,6 +370,7 @@
                 for (SPPlaylist *pl in playlists) {
                     if ([pl.name isEqualToString:@"Hackatune"]) {
                         self.hackatunePlaylist = pl;
+                        break;
                     }
                 }
                 
@@ -372,6 +379,8 @@
                         self.hackatunePlaylist = createdPlaylist;
                     }];
                 }
+                
+                [self.playlistButton setEnabled:(self.hackatunePlaylist != nil)];
             }];
         }];
     }];

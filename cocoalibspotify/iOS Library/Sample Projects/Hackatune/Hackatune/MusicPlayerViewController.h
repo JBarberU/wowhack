@@ -42,6 +42,7 @@
 @property (nonatomic, strong) UIImage *playButtonImage;
 @property (nonatomic, strong) UIImage *pauseButtonImage;
 @property (nonatomic, strong) IBOutlet UIButton *playPauseButton;
+@property (nonatomic, strong) IBOutlet UIButton *playlistButton;
 
 @property (nonatomic, strong) SPTrack *currentTrack;
 @property (nonatomic, strong) SPPlaybackManager *playbackManager;
