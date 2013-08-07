@@ -70,10 +70,6 @@
 						</object>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">placeholder.png</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="156147919">
 						<reference key="NSNextResponder" ref="729612143"/>
@@ -81,7 +77,6 @@
 						<string key="NSFrame">{{0, 490}, {320, 78}}</string>
 						<reference key="NSSuperview" ref="729612143"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -667,7 +662,6 @@
 				<string>lower.png</string>
 				<string>menubutton.png</string>
 				<string>nextbutton.png</string>
-				<string>placeholder.png</string>
 				<string>playbutton.png</string>
 				<string>plusbutton.png</string>
 				<string>upper.png</string>
@@ -678,7 +672,6 @@
 				<string>{640, 156}</string>
 				<string>{60, 60}</string>
 				<string>{60, 60}</string>
-				<string>{580, 580}</string>
 				<string>{80, 80}</string>
 				<string>{60, 60}</string>
 				<string>{640, 480}</string>
