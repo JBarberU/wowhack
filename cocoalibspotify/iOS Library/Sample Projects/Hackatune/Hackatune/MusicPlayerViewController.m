@@ -153,7 +153,7 @@
 {
     SPLoginViewController *controller = [SPLoginViewController loginControllerForSession:[SPSession sharedSession]];
 	controller.allowsCancel = NO;
-
+    
 	[self presentModalViewController:controller animated:NO];
 }
 
@@ -211,16 +211,16 @@
                         if (error) {
                             NSLog(@"Error: %@",error);
                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
-                                                                        message:[error localizedDescription]
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
+                                                                            message:[error localizedDescription]
+                                                                           delegate:nil
+                                                                  cancelButtonTitle:@"OK"
+                                                                  otherButtonTitles:nil];
                             [alert show];
                         } else {
                             self.currentTrack = track;
                             self.playbackManager.delegate = self;
                         }
-                    
+                        
                     }];
                     [[DatabaseHelper sharedDatabaseHelper] insertSongWithID:self.currentTrackURI];
                 }];
@@ -250,12 +250,24 @@
     [self startPlayback];
 }
 
+- (IBAction)addTrackToPlaylist:(id)sender
+{
+    if (!self.hackatunePlaylist) {
+        NSLog(@"Hackatune playlist unavailable");
+        return;
+    }
+    
+    [self.hackatunePlaylist addItem:self.currentTrack atIndex:0 callback:^(NSError *error) {
+        if (error)
+            NSLog(@"Could not add track to playlist!");
+    }];
+}
+
 #pragma -
 #pragma TouchDelegate
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"Bitches love touch 8)");
     if ([touches count] == 1)
         self.touchPoint = [[touches anyObject] locationInView:self.view];
     else
@@ -325,8 +337,45 @@
 	return self;
 }
 
--(void)sessionDidLoginSuccessfully:(SPSession *)aSession; {
-	// Invoked by SPSession after a successful login.
+-(void)sessionDidLoginSuccessfully:(SPSession *)aSession {
+
+    [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession] timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedession, NSArray *notLoadedSession) {
+        
+        // The session is logged in and loaded — now wait for the userPlaylists to load.
+        NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Session loaded.");
+        
+        [SPAsyncLoading waitUntilLoaded:[SPSession sharedSession].userPlaylists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedContainers, NSArray *notLoadedContainers) {
+            
+            // User playlists are loaded — wait for playlists to load their metadata.
+            NSLog(@"[%@ %@]: %@", NSStringFromClass([self class]), NSStringFromSelector(_cmd), @"Container loaded.");
+            
+            NSMutableArray *playlists = [NSMutableArray array];
+            [playlists addObject:[SPSession sharedSession].starredPlaylist];
+            [playlists addObject:[SPSession sharedSession].inboxPlaylist];
+            [playlists addObjectsFromArray:[SPSession sharedSession].userPlaylists.flattenedPlaylists];
+            
+            [SPAsyncLoading waitUntilLoaded:playlists timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *loadedPlaylists, NSArray *notLoadedPlaylists) {
+                
+                // All of our playlists have loaded their metadata — wait for all tracks to load their metadata.
+                NSLog(@"[%@ %@]: %@ of %@ playlists loaded.", NSStringFromClass([self class]), NSStringFromSelector(_cmd),
+                      [NSNumber numberWithInteger:loadedPlaylists.count], [NSNumber numberWithInteger:loadedPlaylists.count + notLoadedPlaylists.count]);
+
+                self.hackatunePlaylist = nil;
+                for (SPPlaylist *pl in playlists) {
+                    if ([pl.name isEqualToString:@"Hackatune"]) {
+                        self.hackatunePlaylist = pl;
+                    }
+                }
+                
+                if (!self.hackatunePlaylist) {
+                    [[[SPSession sharedSession] userPlaylists] createPlaylistWithName:@"Hackatune" callback:^(SPPlaylist *createdPlaylist) {
+                        self.hackatunePlaylist = createdPlaylist;
+                    }];
+                }
+            }];
+        }];
+    }];
+    
 }
 
 -(void)session:(SPSession *)aSession didGenerateLoginCredentials:(NSString *)credential forUserName:(NSString *)userName
@@ -353,7 +402,7 @@
 	controller.allowsCancel = NO;
 	
 	[self presentModalViewController:controller
-											   animated:YES];
+                            animated:YES];
 }
 
 -(void)session:(SPSession *)aSession didEncounterNetworkError:(NSError *)error; {}

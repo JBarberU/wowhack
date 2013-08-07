@@ -49,6 +49,7 @@
 @property (nonatomic, strong) NSString *currentTrackURI;
 @property (nonatomic, strong) NSURLConnection *jsonHTTPConnection;
 @property (nonatomic, strong) NSMutableData *jsonData;
+@property (nonatomic, strong) SPPlaylist *hackatunePlaylist;
 
 @property (nonatomic, strong) NSArray *tracks;
 @property (nonatomic) int currentTrackIndex;
@@ -58,6 +59,7 @@
 
 - (IBAction)playTrack:(id)sender;
 - (IBAction)nextTrack:(id)sender;
+- (IBAction)addTrackToPlaylist:(id)sender;
 - (void)startPlayback;
 - (void)checkPlayState;
 - (void)logout;
