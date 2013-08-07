@@ -13,7 +13,8 @@
 
 @synthesize trackTitle = _trackTitle;
 @synthesize trackArtist = _trackArtist;
-@synthesize coverView = _coverView;
+@synthesize coverView1 = _coverView1;
+@synthesize coverView2 = _coverView2;
 @synthesize playbackManager = _playbackManager;
 @synthesize currentTrack = _currentTrack;
 @synthesize tracks = _tracks;
@@ -37,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.currentCoverImage = 1;
     self.playButtonImage = [UIImage imageNamed:@"playbutton.png"];
     self.pauseButtonImage = [UIImage imageNamed:@"pausebutton.png"];
     
@@ -105,7 +106,42 @@
 	} else if ([keyPath isEqualToString:@"currentTrack.artists"]) {
 		self.trackArtist.text = [[[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","] uppercaseString];
 	} else if ([keyPath isEqualToString:@"currentTrack.album.cover.image"]) {
-		self.coverView.image = self.currentTrack.album.cover.image;
+        if (self.currentCoverImage == 2) {
+            self.coverView1.image = self.currentTrack.album.cover.image;
+            CGRect right = self.coverView1.frame;
+            CGRect left = right;
+            right = CGRectMake([[UIScreen mainScreen] bounds].size.width + right.size.width, right.origin.y, right.size.width, right.size.height);
+            left = CGRectMake(0 - left.size.width, left.origin.y, left.size.width, left.size.height);
+            
+            CGRect center = self.coverView2.frame;
+            [self.coverView1 setFrame:right];
+            
+            [UIView beginAnimations:nil context:NULL]; // animate the following:
+            [self.coverView1 setFrame:center];
+            [self.coverView2 setFrame:left];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView commitAnimations];
+            
+            self.currentCoverImage = 1;
+        } else {
+            self.coverView2.image = self.currentTrack.album.cover.image;
+            CGRect right = self.coverView1.frame;
+            CGRect left = right;
+            right = CGRectMake([[UIScreen mainScreen] bounds].size.width + right.size.width, right.origin.y, right.size.width, right.size.height);
+            left = CGRectMake(0 - left.size.width, left.origin.y, left.size.width, left.size.height);
+            
+            CGRect center = self.coverView1.frame;
+            [self.coverView2 setFrame:right];
+            
+            [UIView beginAnimations:nil context:NULL]; // animate the following:
+            [self.coverView2 setFrame:center];
+            [self.coverView1 setFrame:left];
+            [UIView setAnimationDuration:1.0];
+            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+            [UIView commitAnimations];
+            self.currentCoverImage = 2;
+        }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }

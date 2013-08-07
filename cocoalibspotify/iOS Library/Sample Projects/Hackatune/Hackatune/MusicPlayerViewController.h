@@ -15,7 +15,8 @@
 {
 	MarqueeLabel *_trackTitle;
 	MarqueeLabel *_trackArtist;
-	UIImageView *_coverView;
+	UIImageView *_coverView1;
+	UIImageView *_coverView2;
     UIButton *_playPauseButton;
     UIImage *_playButtonImage;
     UIImage *_pauseButtonImage;
@@ -33,7 +34,8 @@
 
 @property (nonatomic, strong) IBOutlet MarqueeLabel *trackTitle;
 @property (nonatomic, strong) IBOutlet MarqueeLabel *trackArtist;
-@property (nonatomic, strong) IBOutlet UIImageView *coverView;
+@property (nonatomic, strong) IBOutlet UIImageView *coverView1;
+@property (nonatomic, strong) IBOutlet UIImageView *coverView2;
 @property (nonatomic, strong) IBOutlet UIView *view;
 @property (nonatomic, strong) UIFont *mediumFont;
 @property (nonatomic, strong) UIFont *boldFont;
@@ -50,6 +52,7 @@
 
 @property (nonatomic, strong) NSArray *tracks;
 @property (nonatomic) int currentTrackIndex;
+@property (nonatomic) int currentCoverImage;
 
 @property (nonatomic) CGPoint touchPoint;
 

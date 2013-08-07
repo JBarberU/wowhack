@@ -68,6 +68,17 @@
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
+					<object class="IBUIImageView" id="245207447">
+						<reference key="NSNextResponder" ref="729612143"/>
+						<int key="NSvFlags">274</int>
+						<string key="NSFrame">{{336, 135}, {290, 290}}</string>
+						<reference key="NSSuperview" ref="729612143"/>
+						<reference key="NSWindow"/>
+						<string key="NSReuseIdentifierKey">_NS:544</string>
+						<int key="IBUIContentMode">1</int>
+						<bool key="IBUIUserInteractionEnabled">NO</bool>
+						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+					</object>
 					<object class="IBUIImageView" id="440109214">
 						<reference key="NSNextResponder" ref="729612143"/>
 						<int key="NSvFlags">292</int>
@@ -280,14 +291,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">coverView</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="546926377"/>
-					</object>
-					<int key="connectionID">51</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">playPauseButton</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="25226168"/>
@@ -309,6 +312,22 @@
 						<reference key="destination" ref="388069107"/>
 					</object>
 					<int key="connectionID">54</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">coverView1</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="546926377"/>
+					</object>
+					<int key="connectionID">57</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">coverView2</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="245207447"/>
+					</object>
+					<int key="connectionID">60</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -365,6 +384,7 @@
 							<reference ref="350826736"/>
 							<reference ref="25226168"/>
 							<reference ref="549128201"/>
+							<reference ref="245207447"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -413,6 +433,11 @@
 						<reference key="object" ref="549128201"/>
 						<reference key="parent" ref="729612143"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">59</int>
+						<reference key="object" ref="245207447"/>
+						<reference key="parent" ref="729612143"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -435,6 +460,7 @@
 					<string>36.IBPluginDependency</string>
 					<string>37.IBPluginDependency</string>
 					<string>39.IBPluginDependency</string>
+					<string>59.IBPluginDependency</string>
 				</object>
 				<object class="NSArray" key="dict.values">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -448,6 +474,7 @@
 					<string>MarqueeLabel</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>MarqueeLabel</string>
+					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -468,7 +495,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">56</int>
+			<int key="maxID">60</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -520,7 +547,8 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>coverView</string>
+							<string>coverView1</string>
+							<string>coverView2</string>
 							<string>playPauseButton</string>
 							<string>trackArtist</string>
 							<string>trackTitle</string>
@@ -528,6 +556,7 @@
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>UIImageView</string>
 							<string>UIImageView</string>
 							<string>UIButton</string>
 							<string>MarqueeLabel</string>
@@ -539,7 +568,8 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>coverView</string>
+							<string>coverView1</string>
+							<string>coverView2</string>
 							<string>playPauseButton</string>
 							<string>trackArtist</string>
 							<string>trackTitle</string>
@@ -548,7 +578,11 @@
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
-								<string key="name">coverView</string>
+								<string key="name">coverView1</string>
+								<string key="candidateClassName">UIImageView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">coverView2</string>
 								<string key="candidateClassName">UIImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
