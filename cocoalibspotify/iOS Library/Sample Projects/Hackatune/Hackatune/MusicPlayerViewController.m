@@ -8,6 +8,7 @@
 
 #import "MusicPlayerViewController.h"
 #include "appkey.c"
+#import "DatabaseHelper.h"
 
 @implementation MusicPlayerViewController
 
@@ -25,6 +26,7 @@
 @synthesize playButtonImage = _playButtonImage;
 @synthesize pauseButtonImage = _pauseButtonImage;
 @synthesize playPauseButton = _playPauseButton;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -200,24 +202,31 @@
     [[SPSession sharedSession] trackForURL:trackURL callback:^(SPTrack *track) {
         
         if (track != nil) {
-            
-            [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
-                [self.playbackManager playTrack:track callback:^(NSError *error) {
-                    if (error) {
-                        NSLog(@"Error: %@",error);
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
+            NSLog(@"1");
+            if(![[DatabaseHelper sharedDatabaseHelper] selectSongWithID:self.currentTrackURI]) {
+                NSLog(@"2");
+                [SPAsyncLoading waitUntilLoaded:track timeout:kSPAsyncLoadingDefaultTimeout then:^(NSArray *tracks, NSArray *notLoadedTracks) {
+                    NSLog(@"3");
+                    [self.playbackManager playTrack:track callback:^(NSError *error) {
+                        if (error) {
+                            NSLog(@"Error: %@",error);
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Cannot Play Track"
                                                                         message:[error localizedDescription]
                                                                        delegate:nil
                                                               cancelButtonTitle:@"OK"
                                                               otherButtonTitles:nil];
-                        [alert show];
-                    } else {
-                        self.currentTrack = track;
-                        self.playbackManager.delegate = self;
-                    }
+                            [alert show];
+                        } else {
+                            self.currentTrack = track;
+                            self.playbackManager.delegate = self;
+                        }
                     
+                    }];
+                    [[DatabaseHelper sharedDatabaseHelper] insertSongWithID:self.currentTrackURI];
                 }];
-            }];
+            } else {
+                [self nextTrack:nil];
+            }
         }
     }];
 }
@@ -229,8 +238,10 @@
     
     ++self.currentTrackIndex;
     
-    if (self.currentTrackIndex >= [self.tracks count] || self.currentTrackIndex < 0)
+    if (self.currentTrackIndex >= [self.tracks count] || self.currentTrackIndex < 0) {
         self.currentTrackIndex = 0;
+        [[DatabaseHelper sharedDatabaseHelper] clearSongs];
+    }
     
     self.currentTrackURI = [self.tracks objectAtIndex:self.currentTrackIndex];
     
