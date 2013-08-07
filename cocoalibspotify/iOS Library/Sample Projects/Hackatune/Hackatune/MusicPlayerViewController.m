@@ -15,8 +15,7 @@
 
 @synthesize trackTitle = _trackTitle;
 @synthesize trackArtist = _trackArtist;
-@synthesize coverView1 = _coverView1;
-@synthesize coverView2 = _coverView2;
+@synthesize coverView = _coverView;
 @synthesize playbackManager = _playbackManager;
 @synthesize currentTrack = _currentTrack;
 @synthesize tracks = _tracks;
@@ -41,13 +40,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.currentCoverImage = 1;
     self.playButtonImage = [UIImage imageNamed:@"playbutton.png"];
     self.pauseButtonImage = [UIImage imageNamed:@"pausebutton.png"];
     
     self.mediumFont = [UIFont fontWithName:@"AvantGardeCapsAltsMedium" size:18];
     self.boldFont  = [UIFont fontWithName:@"AvantGardeCapsAltsDemi" size:30];
-    
+        
     [self.trackArtist setFont:self.mediumFont];
     [self.trackTitle setFont:self.boldFont];
     
@@ -101,6 +99,8 @@
         [[SPSession sharedSession] attemptLoginWithUserName:user existingCredential:credentials];
     else
         [self performSelector:@selector(showLogin)];
+    
+    self.standardCoverFrame = self.coverView.frame;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
@@ -109,41 +109,14 @@
 	} else if ([keyPath isEqualToString:@"currentTrack.artists"]) {
 		self.trackArtist.text = [[[self.currentTrack.artists valueForKey:@"name"] componentsJoinedByString:@","] uppercaseString];
 	} else if ([keyPath isEqualToString:@"currentTrack.album.cover.image"]) {
-        if (self.currentCoverImage == 2) {
-            self.coverView1.image = self.currentTrack.album.cover.image;
-            CGRect right = self.coverView1.frame;
-            CGRect left = right;
-            right = CGRectMake([[UIScreen mainScreen] bounds].size.width + right.size.width, right.origin.y, right.size.width, right.size.height);
-            left = CGRectMake(0 - left.size.width, left.origin.y, left.size.width, left.size.height);
-            
-            CGRect center = self.coverView2.frame;
-            [self.coverView1 setFrame:right];
-            
-            [UIView beginAnimations:nil context:NULL]; // animate the following:
-            [self.coverView1 setFrame:center];
-            [self.coverView2 setFrame:left];
-            [UIView setAnimationDuration:1.0];
+        self.coverView.image = self.currentTrack.album.cover.image;
+        
+        if (self.coverView.frame.origin.x != self.standardCoverFrame.origin.x) {
+            [UIView beginAnimations:nil context:NULL];
+            [self.coverView setFrame:self.standardCoverFrame];
+            [UIView setAnimationDuration:0.3];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
             [UIView commitAnimations];
-            
-            self.currentCoverImage = 1;
-        } else {
-            self.coverView2.image = self.currentTrack.album.cover.image;
-            CGRect right = self.coverView1.frame;
-            CGRect left = right;
-            right = CGRectMake([[UIScreen mainScreen] bounds].size.width + right.size.width, right.origin.y, right.size.width, right.size.height);
-            left = CGRectMake(0 - left.size.width, left.origin.y, left.size.width, left.size.height);
-            
-            CGRect center = self.coverView1.frame;
-            [self.coverView2 setFrame:right];
-            
-            [UIView beginAnimations:nil context:NULL]; // animate the following:
-            [self.coverView2 setFrame:center];
-            [self.coverView1 setFrame:left];
-            [UIView setAnimationDuration:1.0];
-            [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-            [UIView commitAnimations];
-            self.currentCoverImage = 2;
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
@@ -288,22 +261,47 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    NSLog(@"bARBEerbBBER");
-    if (self.touchPoint.x >= 0 && self.touchPoint.y >= 0 && [touches count] == 1) {
-        CGPoint p = [[touches anyObject] locationInView:self.view];
-        
-        CGRect screen = [[UIScreen mainScreen] bounds];
-        float d = p.x - self.touchPoint.x;
-        
-        if ((d < 0 ? d * -1 : d) > screen.size.width/2) {
-            if (d < 0)
-                [self nextTrack:nil];
-            else {
-            }                
-        }
-    }
+    CGRect newPosition = self.standardCoverFrame;
     
+    // If the image is about to exit to the left
+    if (self.coverView.frame.origin.x < -[[UIScreen mainScreen] bounds].size.width/2) {
+        newPosition = CGRectMake(-[[UIScreen mainScreen] bounds].size.width/2 - self.coverView.frame.size.width/2, self.coverView.frame.origin.y, self.coverView.frame.size.width, self.coverView.frame.size.height);
+        [self nextTrack:nil];
+    }
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(doneCoverFlowAnimating)];
+    [self.coverView setFrame:newPosition];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView commitAnimations];
+
     self.touchPoint = CGPointMake(-1, -1);
+}
+
+
+- (void)doneCoverFlowAnimating
+{
+    NSLog(@"DoneAnimating");
+
+    if (self.coverView.frame.origin.x < -[[UIScreen mainScreen] bounds].size.width/2) {
+        [self.coverView setFrame:CGRectMake([[UIScreen mainScreen] bounds].size.width/2 + self.coverView.frame.size.width/2, self.coverView.frame.origin.y, self.coverView.frame.size.width, self.coverView.frame.size.height)];
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if ([touches count] != 1)
+        return;
+    
+    CGPoint oldPoint = self.touchPoint;
+    self.touchPoint = [[touches anyObject] locationInView:self.view];
+
+    CGRect old = CGRectMake(self.coverView.frame.origin.x + (self.touchPoint.x-oldPoint.x), self.coverView.frame.origin.y, self.coverView.frame.size.width, self.coverView.frame.size.height);
+
+    NSLog(@"NewPos: %f", old.origin.x);
+    [self.coverView setFrame:old];
+    [self.nextResponder touchesMoved:touches withEvent:event];
 }
 
 #pragma mark -

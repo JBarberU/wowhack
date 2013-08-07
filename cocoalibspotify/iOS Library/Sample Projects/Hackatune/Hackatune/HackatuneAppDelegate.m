@@ -59,7 +59,8 @@
     deckController.rightSize = 100;
     
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
-
+    [deckController setPanningCancelsTouchesInView:false];
+    
     self.mainViewController = deckController.centerController;
     
     
