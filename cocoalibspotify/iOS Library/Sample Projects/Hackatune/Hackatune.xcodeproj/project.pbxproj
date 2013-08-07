@@ -12,7 +12,6 @@
 		5002BD7D1439E8E800FEAB3C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD7C1439E8E800FEAB3C /* SystemConfiguration.framework */; };
 		5002BD7F1439E8FC00FEAB3C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD7E1439E8FC00FEAB3C /* CFNetwork.framework */; };
 		5002BD811439E90400FEAB3C /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002BD801439E90400FEAB3C /* libstdc++.dylib */; };
-		50A26BEA1439D79D00A0C876 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EC8CA1439D54E00E8A60C /* libCocoaLibSpotify.a */; };
 		50A26BEC1439D7AA00A0C876 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50A26BEB1439D7AA00A0C876 /* CoreAudio.framework */; };
 		50AF49AD1439CB6D00E4A5EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49AC1439CB6D00E4A5EF /* UIKit.framework */; };
 		50AF49AF1439CB6D00E4A5EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AF49AE1439CB6D00E4A5EF /* Foundation.framework */; };
@@ -27,10 +26,11 @@
 		6B5798E517B217FF00317770 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E317B217FF00317770 /* IIWrapController.m */; };
 		6B5798EF17B2436F00317770 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6B5798EC17B2436F00317770 /* SVProgressHUD.bundle */; };
 		6B5798F017B2436F00317770 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798EE17B2436F00317770 /* SVProgressHUD.m */; };
+		6B5798FA17B269F600317770 /* UIView+Glow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798F917B269F600317770 /* UIView+Glow.m */; };
+		6B5798FF17B26D7A00317770 /* libCocoaLibSpotify.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500EC8CA1439D54E00E8A60C /* libCocoaLibSpotify.a */; };
 		A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77958CF17B211E50022B0E3 /* SettingsViewController.m */; };
 		A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77958D017B211E50022B0E3 /* SettingsViewController.xib */; };
 		A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84B17B11FB9007C22E0 /* InfoPlist.strings */; };
-		A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A7AAD84D17B11FB9007C22E0 /* Hackatune-Info.plist */; };
 		A7AAD85F17B11FB9007C22E0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85517B11FB9007C22E0 /* main.m */; };
 		A7AAD86117B11FB9007C22E0 /* HackatuneAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */; };
 		A7DB2E8417B1C60C0089E3E5 /* MusicPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */; };
@@ -110,6 +110,8 @@
 		6B5798EC17B2436F00317770 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		6B5798ED17B2436F00317770 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		6B5798EE17B2436F00317770 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		6B5798F817B269F600317770 /* UIView+Glow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Glow.h"; sourceTree = "<group>"; };
+		6B5798F917B269F600317770 /* UIView+Glow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Glow.m"; sourceTree = "<group>"; };
 		A77958CE17B211E50022B0E3 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		A77958CF17B211E50022B0E3 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		A77958D017B211E50022B0E3 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = ../SettingsViewController.xib; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5798FF17B26D7A00317770 /* libCocoaLibSpotify.a in Frameworks */,
 				6B5798C517B1E2F200317770 /* CoreData.framework in Frameworks */,
 				C4C2B29417B1C57B0060CE30 /* QuartzCore.framework in Frameworks */,
 				37E8E0A81746325C000A9747 /* Security.framework in Frameworks */,
@@ -161,7 +164,6 @@
 				5002BD7D1439E8E800FEAB3C /* SystemConfiguration.framework in Frameworks */,
 				5002BD6C1439DE2400FEAB3C /* AudioToolbox.framework in Frameworks */,
 				50A26BEC1439D7AA00A0C876 /* CoreAudio.framework in Frameworks */,
-				50A26BEA1439D79D00A0C876 /* libCocoaLibSpotify.a in Frameworks */,
 				50AF49AD1439CB6D00E4A5EF /* UIKit.framework in Frameworks */,
 				50AF49AF1439CB6D00E4A5EF /* Foundation.framework in Frameworks */,
 				50AF49B11439CB6D00E4A5EF /* CoreGraphics.framework in Frameworks */,
@@ -235,6 +237,8 @@
 		A7AAD84917B11FB9007C22E0 /* Hackatune */ = {
 			isa = PBXGroup;
 			children = (
+				6B5798F817B269F600317770 /* UIView+Glow.h */,
+				6B5798F917B269F600317770 /* UIView+Glow.m */,
 				6B5798D717B212F800317770 /* IIViewDeckController.h */,
 				6B5798D817B212F800317770 /* IIViewDeckController.m */,
 				6B5798E017B217FE00317770 /* IISideController.h */,
@@ -339,7 +343,7 @@
 		50AF499F1439CB6D00E4A5EF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Spotify;
 			};
 			buildConfigurationList = 50AF49A21439CB6D00E4A5EF /* Build configuration list for PBXProject "Hackatune" */;
@@ -388,7 +392,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7AAD85B17B11FB9007C22E0 /* InfoPlist.strings in Resources */,
-				A7AAD85C17B11FB9007C22E0 /* Hackatune-Info.plist in Resources */,
 				C421730B17B1589500346BED /* start_i4.png in Resources */,
 				C421730C17B1589500346BED /* start_i5.png in Resources */,
 				C421731417B159CA00346BED /* lower.png in Resources */,
@@ -433,6 +436,7 @@
 				6B5798E517B217FF00317770 /* IIWrapController.m in Sources */,
 				A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */,
 				6B5798F017B2436F00317770 /* SVProgressHUD.m in Sources */,
+				6B5798FA17B269F600317770 /* UIView+Glow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

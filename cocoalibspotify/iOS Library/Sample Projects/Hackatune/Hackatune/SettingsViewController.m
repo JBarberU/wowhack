@@ -7,9 +7,11 @@
 //
 
 #import "SettingsViewController.h"
+#import "UIView+Glow.h"
 #import "CocoaLibSpotify.h"
 
 @interface SettingsViewController ()
+@property (strong, nonatomic) IBOutlet UIButton *logoutBtn;
 
 @end
 
@@ -32,6 +34,13 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.logoutBtn startGlowingWithColor:[UIColor colorWithRed:230 green:249 blue:250 alpha:1.0] intensity:0.4];
 }
 
 - (void)viewDidLoad
@@ -75,6 +84,7 @@
 - (void)viewDidUnload {
     [self setAboutTitle:nil];
     [self setInfotext:nil];
+    [self setLogoutBtn:nil];
     [super viewDidUnload];
 }
 @end
