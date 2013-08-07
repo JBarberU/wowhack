@@ -23,8 +23,6 @@
 		6B5798C217B1E19C00317770 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798BF17B1E19C00317770 /* Song.m */; };
 		6B5798C517B1E2F200317770 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5798C417B1E2F200317770 /* CoreData.framework */; };
 		6B5798D917B212F800317770 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798D817B212F800317770 /* IIViewDeckController.m */; };
-		6B5798DE17B2146600317770 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798DC17B2146600317770 /* MenuViewController.m */; };
-		6B5798DF17B2146600317770 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B5798DD17B2146600317770 /* MenuViewController.xib */; };
 		6B5798E417B217FF00317770 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E117B217FF00317770 /* IISideController.m */; };
 		6B5798E517B217FF00317770 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5798E317B217FF00317770 /* IIWrapController.m */; };
 		A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77958CF17B211E50022B0E3 /* SettingsViewController.m */; };
@@ -99,9 +97,6 @@
 		6B5798C417B1E2F200317770 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6B5798D717B212F800317770 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
 		6B5798D817B212F800317770 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
-		6B5798DB17B2146600317770 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		6B5798DC17B2146600317770 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		6B5798DD17B2146600317770 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		6B5798E017B217FE00317770 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
 		6B5798E117B217FF00317770 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
 		6B5798E217B217FF00317770 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
@@ -238,9 +233,6 @@
 				C421730817B1589500346BED /* graphics */,
 				A7AAD85817B11FB9007C22E0 /* HackatuneAppDelegate.h */,
 				A7AAD85917B11FB9007C22E0 /* HackatuneAppDelegate.m */,
-				6B5798DB17B2146600317770 /* MenuViewController.h */,
-				6B5798DC17B2146600317770 /* MenuViewController.m */,
-				6B5798DD17B2146600317770 /* MenuViewController.xib */,
 				A7DB2E8217B1C60C0089E3E5 /* MusicPlayerViewController.h */,
 				A7DB2E8317B1C60C0089E3E5 /* MusicPlayerViewController.m */,
 				A77958CE17B211E50022B0E3 /* SettingsViewController.h */,
@@ -385,7 +377,6 @@
 				C4388B5417B18EB7002854BA /* AvantGardeCapsAlts-Demi.ttf in Resources */,
 				C4388B5517B18EB7002854BA /* AvantGardeCapsAlts-Medium.ttf in Resources */,
 				A7DB2E8717B1C6250089E3E5 /* MusicPlayerViewController.xib in Resources */,
-				6B5798DF17B2146600317770 /* MenuViewController.xib in Resources */,
 				A77958D217B211E50022B0E3 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,7 +396,6 @@
 				6B5798C117B1E19C00317770 /* Model.xcdatamodeld in Sources */,
 				6B5798C217B1E19C00317770 /* Song.m in Sources */,
 				6B5798D917B212F800317770 /* IIViewDeckController.m in Sources */,
-				6B5798DE17B2146600317770 /* MenuViewController.m in Sources */,
 				6B5798E417B217FF00317770 /* IISideController.m in Sources */,
 				6B5798E517B217FF00317770 /* IIWrapController.m in Sources */,
 				A77958D117B211E50022B0E3 /* SettingsViewController.m in Sources */,

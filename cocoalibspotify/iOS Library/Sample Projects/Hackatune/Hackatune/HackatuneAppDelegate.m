@@ -32,12 +32,12 @@
 
 #import "HackatuneAppDelegate.h"
 #import "IIViewDeckController.h"
+#import "SettingsViewController.h"
 
 @implementation HackatuneAppDelegate
 
 @synthesize window = _window;
 @synthesize mainViewController = _mainViewController;
-@synthesize menuViewController = _menuViewController;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -47,8 +47,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    MenuViewController* leftController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     MusicPlayerViewController *centerController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
+    
+    SettingsViewController* leftController = [[SettingsViewController alloc] initWithSettingsViewDelegate:centerController];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:centerController];
     [navController setNavigationBarHidden:YES];
@@ -59,7 +60,6 @@
     
     [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
 
-    self.menuViewController = deckController.leftController;
     self.mainViewController = deckController.centerController;
     
     
@@ -72,22 +72,6 @@
     [centerController finishInitiation];
 
     return YES;
-}
-
-- (IIViewDeckController*)generateControllerStack {
-    MenuViewController* leftController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    MusicPlayerViewController *centerController = [[MusicPlayerViewController alloc] initWithNibName:@"MusicPlayerViewController" bundle:nil];
-    
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:centerController];
-    [navController setNavigationBarHidden:YES];
-    
-    IIViewDeckController* deckController = [[IIViewDeckController alloc] initWithCenterViewController:navController leftViewController:leftController];
-    [deckController setNavigationControllerBehavior:IIViewDeckNavigationControllerContained];
-    deckController.rightSize = 100;
-    
-    [deckController disablePanOverViewsOfClass:NSClassFromString(@"_UITableViewHeaderFooterContentView")];
-    [centerController finishInitiation];
-    return deckController;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

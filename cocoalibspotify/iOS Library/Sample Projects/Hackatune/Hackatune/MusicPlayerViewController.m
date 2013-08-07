@@ -292,9 +292,6 @@
             if (d < 0)
                 [self nextTrack:nil];
             else {
-                SettingsViewController *svc = [[SettingsViewController alloc] initWithSettingsViewDelegate:self];
-                svc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-                [self presentModalViewController:svc animated:YES];
             }                
         }
     }

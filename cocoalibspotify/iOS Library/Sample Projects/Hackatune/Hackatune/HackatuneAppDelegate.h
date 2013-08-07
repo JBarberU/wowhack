@@ -33,7 +33,6 @@
 #import <UIKit/UIKit.h>
 #import "CocoaLibSpotify.h"
 #import "MusicPlayerViewController.h"
-#import "MenuViewController.h"
 
 @class ViewController;
 @class IIViewDeckController;
@@ -44,7 +43,7 @@
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (retain, nonatomic) UIViewController *mainViewController;
-@property (retain, nonatomic) UIViewController *menuViewController;
+
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

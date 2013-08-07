@@ -226,6 +226,7 @@
 						<string key="NSFrame">{{225, 454}, {30, 30}}</string>
 						<reference key="NSSuperview" ref="729612143"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -540,14 +541,12 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addTrackToPlaylist:</string>
-							<string>handlePan:</string>
 							<string>nextTrack:</string>
 							<string>playTrack:</string>
 						</object>
 						<object class="NSArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>id</string>
-							<string>UIPanGestureRecognizer</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -557,7 +556,6 @@
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>addTrackToPlaylist:</string>
-							<string>handlePan:</string>
 							<string>nextTrack:</string>
 							<string>playTrack:</string>
 						</object>
@@ -566,10 +564,6 @@
 							<object class="IBActionInfo">
 								<string key="name">addTrackToPlaylist:</string>
 								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">handlePan:</string>
-								<string key="candidateClassName">UIPanGestureRecognizer</string>
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">nextTrack:</string>
@@ -587,7 +581,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView1</string>
 							<string>coverView2</string>
-							<string>panGestureRecognizer</string>
 							<string>playPauseButton</string>
 							<string>playlistButton</string>
 							<string>trackArtist</string>
@@ -598,7 +591,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIImageView</string>
 							<string>UIImageView</string>
-							<string>UIPanGestureRecognizer</string>
 							<string>UIButton</string>
 							<string>UIButton</string>
 							<string>MarqueeLabel</string>
@@ -612,7 +604,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView1</string>
 							<string>coverView2</string>
-							<string>panGestureRecognizer</string>
 							<string>playPauseButton</string>
 							<string>playlistButton</string>
 							<string>trackArtist</string>
@@ -628,10 +619,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">coverView2</string>
 								<string key="candidateClassName">UIImageView</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">panGestureRecognizer</string>
-								<string key="candidateClassName">UIPanGestureRecognizer</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">playPauseButton</string>
